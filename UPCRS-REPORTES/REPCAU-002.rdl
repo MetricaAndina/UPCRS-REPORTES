@@ -40,7 +40,7 @@
 
 FROM VISTA_AD
 
-WHERE DATE_FORMAT(FechaRegistro,"%d/%m/%Y") between ? and ?</CommandText>
+WHERE FechaRegistro between ? and ?</CommandText>
       </Query>
       <Fields>
         <Field Name="CommonName">
@@ -289,7 +289,6 @@ WHERE DATE_FORMAT(FechaRegistro,"%d/%m/%Y") between ? and ?</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -321,7 +320,6 @@ WHERE DATE_FORMAT(FechaRegistro,"%d/%m/%Y") between ? and ?</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -355,7 +353,6 @@ WHERE DATE_FORMAT(FechaRegistro,"%d/%m/%Y") between ? and ?</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -389,7 +386,6 @@ WHERE DATE_FORMAT(FechaRegistro,"%d/%m/%Y") between ? and ?</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -423,7 +419,6 @@ WHERE DATE_FORMAT(FechaRegistro,"%d/%m/%Y") between ? and ?</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -560,11 +555,11 @@ WHERE DATE_FORMAT(FechaRegistro,"%d/%m/%Y") between ? and ?</CommandText>
   </ReportSections>
   <ReportParameters>
     <ReportParameter Name="FECHA_INI">
-      <DataType>String</DataType>
+      <DataType>DateTime</DataType>
       <Prompt>FECHA_INI</Prompt>
     </ReportParameter>
     <ReportParameter Name="FECHA_FIN">
-      <DataType>String</DataType>
+      <DataType>DateTime</DataType>
       <Prompt>FECHA_FIN</Prompt>
     </ReportParameter>
   </ReportParameters>

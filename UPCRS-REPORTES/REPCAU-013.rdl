@@ -23,7 +23,7 @@
         </QueryParameters>
         <CommandText>SELECT        CARPETA, USUARIO, `NOMBRE DE USUARIO`, Permisos, FechaRegistro, Area, Estado
 FROM            VISTA_CARPETAS_SERVER
-WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
+WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
       </Query>
       <Fields>
         <Field Name="CARPETA">
@@ -555,7 +555,7 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>de Finanzas al </Value>
+                      <Value>de Legal al </Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -708,36 +708,6 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox9">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=CountRows("ReportesDataSet")</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>0.95278cm</Top>
-              <Left>18.52555cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.42945cm</Width>
-              <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

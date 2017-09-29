@@ -24,8 +24,8 @@
             <Value>=Parameters!Fecha_Fin.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT        CARPETA, USUARIO, `NOMBRE DE USUARIO`, Permisos, FechaRegistro
-FROM            VISTA_CARPETAS_PC
+        <CommandText>SELECT        CARPETA, USUARIO, `NOMBRE DE USUARIO`, Permisos, FechaRegistro, Area, Estado
+FROM            VISTA_CARPETAS_SERVER
 WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
       </Query>
       <Fields>
@@ -49,6 +49,14 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
           <DataField>FechaRegistro</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="Area">
+          <DataField>Area</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Estado">
+          <DataField>Estado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -67,6 +75,9 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>4.33885cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -173,99 +184,32 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
                         </Textbox>
                       </CellContents>
                     </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox14">
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>ESTADO</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox15">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox15</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox16">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox16</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -289,7 +233,9 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NOMBRE_DE_USUARIO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -319,7 +265,9 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!USUARIO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -371,12 +319,45 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Estado">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Estado.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Estado</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -439,7 +420,7 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
                   <TablixHeader>
                     <Size>2.5cm</Size>
                     <CellContents>
-                      <Textbox Name="CARPETA1">
+                      <Textbox Name="CARPETA">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -455,7 +436,7 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>CARPETA1</rd:DefaultName>
+                        <rd:DefaultName>CARPETA</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
@@ -470,21 +451,16 @@ WHERE        (FechaRegistro BETWEEN ? AND ?)</CommandText>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
-                    <TablixMember>
-                      <KeepWithGroup>After</KeepWithGroup>
-                    </TablixMember>
-                    <TablixMember>
-                      <Group Name="Detalles" />
-                    </TablixMember>
+                    <TablixMember />
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ReporteDataSet</DataSetName>
-            <Top>0.89641cm</Top>
-            <Left>2.95137cm</Left>
-            <Height>1.8cm</Height>
-            <Width>15.51655cm</Width>
+            <Top>0.55245cm</Top>
+            <Left>1.13426cm</Left>
+            <Height>1.2cm</Height>
+            <Width>18.01655cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

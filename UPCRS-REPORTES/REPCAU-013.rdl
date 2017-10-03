@@ -23,7 +23,7 @@
         </QueryParameters>
         <CommandText>SELECT        CARPETA, USUARIO, `NOMBRE DE USUARIO`, Permisos, FechaRegistro, Area, Estado
 FROM            VISTA_CARPETAS_SERVER
-WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
+WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
       </Query>
       <Fields>
         <Field Name="CARPETA">
@@ -466,8 +466,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
             </Style>
           </Tablix>
           <Line Name="Line2">
-            <Top>2.39889cm</Top>
-            <Left>0.15717cm</Left>
+            <Top>3.21909cm</Top>
             <Height>0cm</Height>
             <Width>20.90526cm</Width>
             <ZIndex>1</ZIndex>
@@ -478,7 +477,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
             </Style>
           </Line>
         </ReportItems>
-        <Height>0.95833in</Height>
+        <Height>1.27083in</Height>
         <Style />
       </Body>
       <Width>8.35417in</Width>
@@ -570,8 +569,8 @@ WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.34056cm</Top>
               <Left>7.92056cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>4.03861cm</Width>
+              <Height>0.96696cm</Height>
+              <Width>3.08611cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -602,8 +601,8 @@ WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>1.34056cm</Top>
-              <Left>11.98245cm</Left>
+              <Top>1.37583cm</Top>
+              <Left>11.07723cm</Left>
               <Height>0.84102cm</Height>
               <Width>3.77cm</Width>
               <ZIndex>4</ZIndex>
@@ -625,7 +624,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.11667cm</Height>
+          <Height>1.13771cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -658,36 +657,6 @@ WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox21">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>N° Registros:</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox19</rd:DefaultName>
-              <Top>0.95278cm</Top>
-              <Left>16.04319cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.34125cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="TotalPages">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -707,7 +676,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro = ?)</CommandText>
               <Left>18.455cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

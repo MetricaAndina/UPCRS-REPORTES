@@ -68,12 +68,10 @@
       <Platform>Win32</Platform>
       <Options>
         <OutputPath>bin\Debug</OutputPath>
-        <TargetServerVersion>SSRS2016</TargetServerVersion>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
         <TargetServerURL>http://localhost/reportserver</TargetServerURL>
         <TargetFolder>UPCRS-REPORTES</TargetFolder>
         <TargetMobileReportFolder>Informes para dispositivos móviles</TargetMobileReportFolder>
-        <TargetDataSourceFolder>Orígenes de datos</TargetDataSourceFolder>
-        <TargetDatasetFolder>Conjuntos de datos</TargetDatasetFolder>
         <TargetReportPartFolder>Elementos de informe</TargetReportPartFolder>
       </Options>
     </Configuration>

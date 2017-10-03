@@ -621,7 +621,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                   <TextRun>
                     <Value>Observaciones de cada revisión</Value>
                     <Style>
-                      <FontSize>14pt</FontSize>
+                      <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -629,10 +629,10 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>2.87169cm</Top>
+            <Top>3.00398cm</Top>
             <Left>6.18808cm</Left>
-            <Height>0.78521cm</Height>
-            <Width>8.23582cm</Width>
+            <Height>0.65292cm</Height>
+            <Width>6.2779cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -739,7 +739,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               <Top>1.20261cm</Top>
               <Left>11.50146cm</Left>
               <Height>0.84102cm</Height>
-              <Width>3.34166cm</Width>
+              <Width>3.18291cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -770,9 +770,9 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
               <Top>1.20261cm</Top>
-              <Left>15.01952cm</Left>
+              <Left>14.82548cm</Left>
               <Height>0.84102cm</Height>
-              <Width>0.75375cm</Width>
+              <Width>0.60383cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -803,9 +803,9 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Top>1.20261cm</Top>
-              <Left>15.91438cm</Left>
+              <Left>15.57042cm</Left>
               <Height>0.84102cm</Height>
-              <Width>3.3202cm</Width>
+              <Width>3.37312cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
@@ -824,7 +824,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Administración del </Value>
+                      <Value>Administración del</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -838,7 +838,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               <Top>1.23789cm</Top>
               <Left>6.18808cm</Left>
               <Height>0.80574cm</Height>
-              <Width>5.31338cm</Width>
+              <Width>5.13699cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
                 <Border>

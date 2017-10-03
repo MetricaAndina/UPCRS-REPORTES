@@ -650,6 +650,19 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
           <Border>
             <Style>Solid</Style>
           </Border>
+          <TopBorder>
+            <Style>None</Style>
+          </TopBorder>
+          <BottomBorder>
+            <Style>None</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Color>Black</Color>
+            <Width>1pt</Width>
+          </LeftBorder>
+          <RightBorder>
+            <Style>None</Style>
+          </RightBorder>
         </Style>
       </Body>
       <Width>8.40464in</Width>

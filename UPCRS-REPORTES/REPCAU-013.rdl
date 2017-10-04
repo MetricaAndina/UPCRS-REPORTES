@@ -4,11 +4,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="ReportesDataSource">
-      <ConnectionProperties>
-        <DataProvider>ODBC</DataProvider>
-        <ConnectString>Dsn=dbguru</ConnectString>
-        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos ReportesDataSource:</Prompt>
-      </ConnectionProperties>
+      <DataSourceReference>DS-REPORTE_MySQL</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>c9304dac-5ab2-435b-a130-47155d258df4</rd:DataSourceID>
     </DataSource>
@@ -635,8 +631,8 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>16.33424cm</Left>
+              <Top>0.09702cm</Top>
+              <Left>17.36611cm</Left>
               <Height>0.6cm</Height>
               <Width>2.05021cm</Width>
               <Style>
@@ -660,14 +656,16 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>TotalPages</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>18.455cm</Left>
+              <Top>0.09702cm</Top>
+              <Left>19.52215cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <Width>1.43285cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

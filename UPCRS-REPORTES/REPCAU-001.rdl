@@ -4,11 +4,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="ReporteDataSource">
-      <ConnectionProperties>
-        <DataProvider>ODBC</DataProvider>
-        <ConnectString>Dsn=dbguru</ConnectString>
-        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos ReporteDataSource:</Prompt>
-      </ConnectionProperties>
+      <DataSourceReference>DS-REPORTE_MySQL</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>4b322c85-348f-41e0-8be4-3bf74c264a76</rd:DataSourceID>
     </DataSource>
@@ -761,7 +757,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               <Top>1.20261cm</Top>
               <Left>11.08133cm</Left>
               <Height>0.84102cm</Height>
-              <Width>3.60624cm</Width>
+              <Width>3.36812cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -794,7 +790,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
               <Top>1.20262cm</Top>
-              <Left>14.7934cm</Left>
+              <Left>14.55528cm</Left>
               <Height>0.84102cm</Height>
               <Width>0.60383cm</Width>
               <ZIndex>4</ZIndex>
@@ -829,9 +825,9 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Top>1.20262cm</Top>
-              <Left>15.53834cm</Left>
+              <Left>15.22966cm</Left>
               <Height>0.84102cm</Height>
-              <Width>4.14603cm</Width>
+              <Width>4.45471cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>

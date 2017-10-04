@@ -4,11 +4,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="ReportesDataSource">
-      <ConnectionProperties>
-        <DataProvider>ODBC</DataProvider>
-        <ConnectString>Dsn=dbguru</ConnectString>
-        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos ReportesDataSource:</Prompt>
-      </ConnectionProperties>
+      <DataSourceReference>DS-REPORTE_MySQL</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>c9304dac-5ab2-435b-a130-47155d258df4</rd:DataSourceID>
     </DataSource>
@@ -19,12 +15,20 @@
         <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+            <Value>=UCase(Parameters!AREA.Value)</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_INICIO.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_FIN.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT        CARPETA, USUARIO, `NOMBRE DE USUARIO`, Permisos, FechaRegistro, Area, Estado
 FROM            VISTA_CARPETAS_SERVER
-WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
+WHERE        (UPPER(Area) = ?) AND (FechaRegistro BETWEEN ? AND ?)</CommandText>
       </Query>
       <Fields>
         <Field Name="CARPETA">
@@ -53,6 +57,19 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
         </Field>
         <Field Name="Estado">
           <DataField>Estado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="AreaDataSet">
+      <Query>
+        <DataSourceName>ReportesDataSource</DataSourceName>
+        <CommandText>SELECT DISTINCT Area
+FROM            VISTA_CARPETAS_SERVER</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Area">
+          <DataField>Area</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -547,7 +564,7 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>de Finanzas al </Value>
+                      <Value>de  </Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -555,15 +572,15 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Center</TextAlign>
+                    <TextAlign>Left</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.34056cm</Top>
-              <Left>7.92056cm</Left>
+              <Top>1.30528cm</Top>
+              <Left>5.16889cm</Left>
               <Height>0.84102cm</Height>
-              <Width>4.03861cm</Width>
+              <Width>0.81069cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -583,26 +600,173 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
+                      <Value>=Parameters!AREA.Value</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>1.34056cm</Top>
-              <Left>11.98245cm</Left>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.30528cm</Top>
+              <Left>6.08542cm</Left>
               <Height>0.84102cm</Height>
-              <Width>3.77cm</Width>
+              <Width>2.5834cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox4">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>del </Value>
+                      <Style>
+                        <FontSize>16pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.30528cm</Top>
+              <Left>8.80993cm</Left>
+              <Height>0.84102cm</Height>
+              <Width>1.23132cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Format(Parameters!FECHA_INICIO.Value,"dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>16pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.30528cm</Top>
+              <Left>10.18235cm</Left>
+              <Height>0.84102cm</Height>
+              <Width>3.36084cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox6">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>al  </Value>
+                      <Style>
+                        <FontSize>16pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.30528cm</Top>
+              <Left>13.64902cm</Left>
+              <Height>0.84102cm</Height>
+              <Width>0.83306cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox7">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Format(Parameters!FECHA_FIN.Value,"dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>16pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.30528cm</Top>
+              <Left>14.55264cm</Left>
+              <Height>0.84102cm</Height>
+              <Width>3.26723cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -661,7 +825,9 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>TotalPages</rd:DefaultName>
@@ -699,9 +865,34 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="FECHA_REGISTRO">
+    <ReportParameter Name="FECHA_INICIO">
       <DataType>DateTime</DataType>
-      <Prompt>FECHA_REGISTRO</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>=Today()</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FECHA_INICIO</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FECHA_FIN">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Today()</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FECHA_FIN</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AREA">
+      <DataType>String</DataType>
+      <Prompt>AREA</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>AreaDataSet</DataSetName>
+          <ValueField>Area</ValueField>
+          <LabelField>Area</LabelField>
+        </DataSetReference>
+      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -710,9 +901,19 @@ WHERE Area='Finanzas' AND FechaRegistro=?</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
+          <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>FECHA_REGISTRO</ParameterName>
+          <ParameterName>FECHA_INICIO</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>FECHA_FIN</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>AREA</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

@@ -7,6 +7,7 @@
       <ConnectionProperties>
         <DataProvider>ODBC</DataProvider>
         <ConnectString>Dsn=dbguru</ConnectString>
+        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos ReportesDataSource:</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>c9304dac-5ab2-435b-a130-47155d258df4</rd:DataSourceID>
@@ -92,7 +93,6 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                                 <TextRun>
                                   <Value>NOMBRE DE USUARIO</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -106,7 +106,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#ffa464</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -139,7 +139,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#ffa464</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -159,7 +159,6 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                                 <TextRun>
                                   <Value>PERMISOS</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -173,7 +172,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#ffa464</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -193,7 +192,6 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                                 <TextRun>
                                   <Value>ESTADO</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -207,7 +205,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#ffa464</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -231,9 +229,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NOMBRE_DE_USUARIO.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -245,6 +241,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -263,9 +260,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!USUARIO.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -277,6 +272,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -295,9 +291,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Permisos.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -309,6 +303,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -327,9 +322,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Estado.Value</Value>
-                                  <Style>
-                                    <FontFamily>Arial</FontFamily>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -341,6 +334,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -376,7 +370,6 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                               <TextRun>
                                 <Value>CARPETA</Value>
                                 <Style>
-                                  <FontFamily>Arial</FontFamily>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -390,7 +383,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
-                          <BackgroundColor>#ffa464</BackgroundColor>
+                          <BackgroundColor>#e09c6d</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -426,9 +419,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!CARPETA.Value</Value>
-                                <Style>
-                                  <FontFamily>Arial</FontFamily>
-                                </Style>
+                                <Style />
                               </TextRun>
                             </TextRuns>
                             <Style />
@@ -440,6 +431,7 @@ WHERE        (Area = 'Legal') AND (FechaRegistro &lt;= ?)</CommandText>
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>

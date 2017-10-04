@@ -7,6 +7,7 @@
       <ConnectionProperties>
         <DataProvider>ODBC</DataProvider>
         <ConnectString>Dsn=dbguru</ConnectString>
+        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos ReporteDataSource:</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>4b322c85-348f-41e0-8be4-3bf74c264a76</rd:DataSourceID>
@@ -166,7 +167,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#fd874d</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -199,7 +200,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#fd874d</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -232,7 +233,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#fd874d</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -268,6 +269,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -298,6 +300,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -328,6 +331,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -409,7 +413,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#fd874d</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -442,7 +446,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#fd874d</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -475,7 +479,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#fd874d</BackgroundColor>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -511,6 +515,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -541,6 +546,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -571,6 +577,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -668,7 +675,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
       <Width>8.40464in</Width>
       <Page>
         <PageHeader>
-          <Height>2.54cm</Height>
+          <Height>2.48708cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -691,7 +698,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Relación de PCs de Vicepresidencia de Finanzas y </Value>
+                      <Value>Relación de PCs de Vicepresidencia de Finanzas</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -699,15 +706,15 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Center</TextAlign>
+                    <TextAlign>Left</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.29104cm</Top>
-              <Left>6.18808cm</Left>
+              <Left>5.20912cm</Left>
               <Height>0.84102cm</Height>
-              <Width>13.0465cm</Width>
+              <Width>14.47525cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -720,10 +727,10 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>2.48391cm</Top>
+              <Top>2.46945cm</Top>
               <Left>0.04974cm</Left>
               <Height>0cm</Height>
-              <Width>20.90526cm</Width>
+              <Width>21.29805cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -745,14 +752,16 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>1.20261cm</Top>
-              <Left>11.50146cm</Left>
+              <Left>11.08133cm</Left>
               <Height>0.84102cm</Height>
-              <Width>3.18291cm</Width>
+              <Width>3.60624cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -778,12 +787,14 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>1.20261cm</Top>
-              <Left>14.82548cm</Left>
+              <Top>1.20262cm</Top>
+              <Left>14.7934cm</Left>
               <Height>0.84102cm</Height>
               <Width>0.60383cm</Width>
               <ZIndex>4</ZIndex>
@@ -811,14 +822,16 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>1.20261cm</Top>
-              <Left>15.57042cm</Left>
+              <Top>1.20262cm</Top>
+              <Left>15.53834cm</Left>
               <Height>0.84102cm</Height>
-              <Width>3.37312cm</Width>
+              <Width>4.14603cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
@@ -837,21 +850,23 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Administración del</Value>
+                      <Value>y Administración del</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>1.23789cm</Top>
-              <Left>6.18808cm</Left>
-              <Height>0.80574cm</Height>
-              <Width>5.13699cm</Width>
+              <Top>1.20262cm</Top>
+              <Left>5.20912cm</Left>
+              <Height>0.859cm</Height>
+              <Width>5.69582cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
                 <Border>
@@ -871,7 +886,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.13771cm</Height>
+          <Height>1.66688cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -938,7 +953,7 @@ WHERE        (DATE_FORMAT(V.FechaRegistro, '%d/%m/%Y') BETWEEN ? AND ?)</Command
               <Top>0.03528cm</Top>
               <Left>0.04974cm</Left>
               <Height>0cm</Height>
-              <Width>20.90526cm</Width>
+              <Width>21.29805cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>

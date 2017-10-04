@@ -69,11 +69,7 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-<<<<<<< HEAD
         <TargetServerURL>http://svrdesareposerv/reportserver</TargetServerURL>
-=======
-        <TargetServerURL>http://localhost/reportserver</TargetServerURL>
->>>>>>> a0510b99309b25e4c1ef5e6ef8e9b73ca5f082ca
         <TargetFolder>UPCRS-REPORTES</TargetFolder>
         <TargetMobileReportFolder>Informes para dispositivos móviles</TargetMobileReportFolder>
         <TargetReportPartFolder>Elementos de informe</TargetReportPartFolder>

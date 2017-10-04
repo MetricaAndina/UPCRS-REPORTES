@@ -15,40 +15,30 @@
         <DataSourceName>DS_CuentasCompartidas</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_REG.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
             <Value>=Parameters!FECHA_INI.Value</Value>
           </QueryParameter>
           <QueryParameter Name="?">
             <Value>=Parameters!FECHA_FIN.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT
-	
-	commonName, 
-    
-	
-	ad_username,
-    
-	
-	DATE_FORMAT(FechaRegistro,"%d/%m/%Y") FechaRegistro, 
+        <CommandText>SELECT 
+Nombre, Codigo, DATE_FORMAT(FechaRegistro,"%d/%m/%Y") FechaRegistro, OU, Descripcion 
 
-    
-	OU,
-    
-	
-	Descripcion
+from VISTA_RiskCtl004CtasAD 
 
-
-FROM VISTA_AD
-
-WHERE FechaRegistro between ? and ?</CommandText>
+WHERE FechaRegistro=? 
+	AND  Fecha_Creacion between ? and ?</CommandText>
       </Query>
       <Fields>
-        <Field Name="CommonName">
-          <DataField>CommonName</DataField>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ad_username">
-          <DataField>ad_username</DataField>
+        <Field Name="CODIGO">
+          <DataField>CODIGO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FechaRegistro">
@@ -83,7 +73,7 @@ WHERE FechaRegistro between ? and ?</CommandText>
                   <Width>3.78292cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>5.09292cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>14.565cm</Width>
@@ -203,7 +193,6 @@ WHERE FechaRegistro between ? and ?</CommandText>
                                 <TextRun>
                                   <Value>OU</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -237,7 +226,6 @@ WHERE FechaRegistro between ? and ?</CommandText>
                                 <TextRun>
                                   <Value>DESCRIPCION</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -267,21 +255,21 @@ WHERE FechaRegistro between ? and ?</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="CommonName">
+                        <Textbox Name="Nombre">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!CommonName.Value</Value>
+                                  <Value>=Fields!Nombre.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>CommonName</rd:DefaultName>
+                          <rd:DefaultName>Nombre</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -298,21 +286,21 @@ WHERE FechaRegistro between ? and ?</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ad_username">
+                        <Textbox Name="CODIGO">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ad_username.Value</Value>
+                                  <Value>=Fields!CODIGO.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ad_username</rd:DefaultName>
+                          <rd:DefaultName>CODIGO</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -453,7 +441,7 @@ WHERE FechaRegistro between ? and ?</CommandText>
             <Top>0.63183cm</Top>
             <Left>1.42557cm</Left>
             <Height>1.2cm</Height>
-            <Width>32.14943cm</Width>
+            <Width>34.74235cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -464,7 +452,7 @@ WHERE FechaRegistro between ? and ?</CommandText>
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>13.2185in</Width>
+      <Width>14.23934in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -567,6 +555,10 @@ WHERE FechaRegistro between ? and ?</CommandText>
       <DataType>DateTime</DataType>
       <Prompt>FECHA_FIN</Prompt>
     </ReportParameter>
+    <ReportParameter Name="FECHA_REG">
+      <DataType>DateTime</DataType>
+      <Prompt>FECHA_REG</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -582,6 +574,11 @@ WHERE FechaRegistro between ? and ?</CommandText>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>FECHA_FIN</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>FECHA_REG</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

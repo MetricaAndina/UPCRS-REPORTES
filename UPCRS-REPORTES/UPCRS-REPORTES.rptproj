@@ -61,6 +61,14 @@
       <Name>REPCAU-013.rdl</Name>
       <FullPath>REPCAU-013.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>REPCAU-014.rdl</Name>
+      <FullPath>REPCAU-014.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>REPCAU-015.rdl</Name>
+      <FullPath>REPCAU-015.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

@@ -3,92 +3,48 @@
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="ReporteDataSource">
+    <DataSource Name="ReportesDataSource">
       <DataSourceReference>DS-REPORTE_MySQL</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>4b322c85-348f-41e0-8be4-3bf74c264a76</rd:DataSourceID>
+      <rd:DataSourceID>c9304dac-5ab2-435b-a130-47155d258df4</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ReporteDataSet">
+    <DataSet Name="ReportesDataSet">
       <Query>
-        <DataSourceName>ReporteDataSource</DataSourceName>
+        <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
             <Value>=Parameters!FECHA_REGISTRO.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!STATUS.Value</Value>
-          </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT * FROM(SELECT P.ID, DATE_FORMAT(P.FechaRegistro, '%d/%m/%Y') AS FECHA_REGISTRO, C.ic_area AS AREA, P.IP, P.HOST, P.TIPO, TOTAL.HOST AS TOTAL_HOST, 
-                         CarpetaCumple(TOTAL.HOST) AS STATUS
-FROM            INVENTARIO_CARPETAS C, { oj VISTA_CARPETAS_PC P LEFT OUTER JOIN
-                             (SELECT        ID, FechaRegistro, HOST, IP, TIPO
-                               FROM            VISTA_CARPETAS_PC
-                               WHERE        (FechaRegistro = ?) AND (ID NOT IN
-                                                             (SELECT        ID
-                                                               FROM            FILTRO_NO_EVERYONE
-                                                               WHERE        (FechaRegistro = ?)))) TOTAL ON TOTAL.HOST = P.HOST}
-WHERE        C.id_inv_carpetas = P.ID AND (P.FechaRegistro = ?))P WHERE  P.STATUS = ?</CommandText>
+        <CommandText>SELECT        COD_USUARIO, Cod_Tipo_Usuario, Servidor, FechaRegistro, Descripcion, Observacion
+FROM            VISTA_Risk013C03SocVsPla
+WHERE        (FechaRegistro = ?)</CommandText>
       </Query>
       <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="FECHA_REGISTRO">
-          <DataField>FECHA_REGISTRO</DataField>
+        <Field Name="COD_USUARIO">
+          <DataField>COD_USUARIO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="AREA">
-          <DataField>AREA</DataField>
+        <Field Name="Cod_Tipo_Usuario">
+          <DataField>Cod_Tipo_Usuario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="IP">
-          <DataField>IP</DataField>
+        <Field Name="Servidor">
+          <DataField>Servidor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="HOST">
-          <DataField>HOST</DataField>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TIPO">
-          <DataField>TIPO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="FechaRegistro">
+          <DataField>FechaRegistro</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="TOTAL_HOST">
-          <DataField>TOTAL_HOST</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="STATUS">
-          <DataField>STATUS</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="StatusDataSet">
-      <Query>
-        <DataSourceName>ReporteDataSource</DataSourceName>
-        <CommandText>SELECT        'Cumple' AS des, 'Cumple' AS valor
-FROM            VISTA_CARPETAS_PC
-UNION
-SELECT        'NoCumple' AS des, 'NoCumple' AS valor
-FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="des">
-          <DataField>des</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="valor">
-          <DataField>valor</DataField>
+        <Field Name="Observacion">
+          <DataField>Observacion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -102,16 +58,19 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.008cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.43133cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>5.70298cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.18779cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>6.84855cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -120,14 +79,14 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox10">
+                        <Textbox Name="Textbox3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>AREA</Value>
+                                  <Value>COD USUARIO</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -136,7 +95,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -153,14 +112,14 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox12">
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>IP</Value>
+                                  <Value>COD TIPO USUARIO</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -169,7 +128,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -186,14 +145,14 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox14">
+                        <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>HOST</Value>
+                                  <Value>DESCRIPCION</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -202,7 +161,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -219,14 +178,14 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox8">
+                        <Textbox Name="Textbox9">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>STATUS</Value>
+                                  <Value>ORIGEN</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -235,7 +194,40 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>OBSERVACIONES</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -257,27 +249,26 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="AREA">
+                        <Textbox Name="COD_USUARIO">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!AREA.Value</Value>
+                                  <Value>=Fields!COD_USUARIO.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>AREA</rd:DefaultName>
+                          <rd:DefaultName>COD_USUARIO</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -288,27 +279,26 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="IP">
+                        <Textbox Name="Cod_Tipo_Usuario">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!IP.Value</Value>
+                                  <Value>=Fields!Cod_Tipo_Usuario.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>IP</rd:DefaultName>
+                          <rd:DefaultName>Cod_Tipo_Usuario</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -319,27 +309,26 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="HOST">
+                        <Textbox Name="Descripcion">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!HOST.Value</Value>
+                                  <Value>=Fields!Descripcion.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>HOST</rd:DefaultName>
+                          <rd:DefaultName>Descripcion</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -350,27 +339,56 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="STATUS">
+                        <Textbox Name="Servidor">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!STATUS.Value</Value>
+                                  <Value>=Fields!Servidor.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>STATUS</rd:DefaultName>
+                          <rd:DefaultName>Servidor</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Observacion">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Observacion.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Observacion</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -389,6 +407,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -401,11 +420,11 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>ReporteDataSet</DataSetName>
-            <Top>0.52599cm</Top>
-            <Left>6.18808cm</Left>
+            <DataSetName>ReportesDataSet</DataSetName>
+            <Top>0.67433cm</Top>
+            <Left>0.73766cm</Left>
             <Height>1.2cm</Height>
-            <Width>10cm</Width>
+            <Width>21.17865cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -413,30 +432,13 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.27083in</Height>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <TopBorder>
-            <Style>None</Style>
-          </TopBorder>
-          <BottomBorder>
-            <Style>None</Style>
-          </BottomBorder>
-          <LeftBorder>
-            <Color>Black</Color>
-            <Width>1pt</Width>
-          </LeftBorder>
-          <RightBorder>
-            <Style>None</Style>
-          </RightBorder>
-        </Style>
+        <Height>1.30208in</Height>
+        <Style />
       </Body>
-      <Width>8.40464in</Width>
+      <Width>9.26736in</Width>
       <Page>
         <PageHeader>
-          <Height>2.48708cm</Height>
+          <Height>2.52395cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -452,6 +454,17 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 </Border>
               </Style>
             </Image>
+            <Line Name="Line1">
+              <Top>2.48391cm</Top>
+              <Height>0cm</Height>
+              <Width>23.5391cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
             <Textbox Name="Textbox1">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -459,7 +472,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Relación de PCs de Vicepresidencia de Finanzas</Value>
+                      <Value>CONTROL DE CREACIÓN DE CUENTAS ACEDEMICAS (FORMAL)</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -472,11 +485,10 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.29104cm</Top>
-              <Left>5.20912cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>14.47525cm</Width>
-              <ZIndex>1</ZIndex>
+              <Left>4.93958cm</Left>
+              <Height>0.80574cm</Height>
+              <Width>16.97674cm</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -487,18 +499,6 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line1">
-              <Top>2.46945cm</Top>
-              <Left>0.04974cm</Left>
-              <Height>0cm</Height>
-              <Width>21.29805cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
             <Textbox Name="Textbox2">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -506,59 +506,24 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Parameters!FECHA_REGISTRO.Value, "dd/MM/yyyy")</Value>
+                      <Value>Usuarios con accesos del tipo de usuario Administrativo que no están en OFIPLAN</Value>
                       <Style>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Left</TextAlign>
+                    <TextAlign>Center</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>1.20261cm</Top>
-              <Left>10.69327cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>3.36812cm</Width>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.94685cm</Top>
+              <Left>4.93958cm</Left>
+              <Height>1.41676cm</Height>
+              <Width>16.97674cm</Width>
               <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox9">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>y Administración al</Value>
-                      <Style>
-                        <FontSize>16pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>1.20262cm</Top>
-              <Left>5.20912cm</Left>
-              <Height>0.859cm</Height>
-              <Width>5.37832cm</Width>
-              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -577,39 +542,10 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.66688cm</Height>
+          <Height>1.2259cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="TotalPages">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Globals!TotalPages</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>TotalPages</rd:DefaultName>
-              <Top>0.21167cm</Top>
-              <Left>18.455cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox18">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -625,10 +561,41 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.21167cm</Top>
-              <Left>16.33424cm</Left>
+              <Top>0.19403cm</Top>
+              <Left>18.99771cm</Left>
               <Height>0.6cm</Height>
               <Width>2.05021cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="TotalPages">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!TotalPages</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>TotalPages</rd:DefaultName>
+              <Top>0.19403cm</Top>
+              <Left>21.15375cm</Left>
+              <Height>0.6cm</Height>
+              <Width>1.43285cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -641,10 +608,9 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line2">
-              <Top>0.03528cm</Top>
-              <Left>0.04974cm</Left>
+              <Top>0cm</Top>
               <Height>0cm</Height>
-              <Width>21.29805cm</Width>
+              <Width>23.5391cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -652,6 +618,66 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
                 </Border>
               </Style>
             </Line>
+            <Textbox Name="Textbox19">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Fecha de Ejecución:</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.19403cm</Top>
+              <Left>0.14111cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.21438cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox14">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox14</rd:DefaultName>
+              <Top>0.19403cm</Top>
+              <Left>3.42604cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -675,17 +701,6 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
       <DataType>DateTime</DataType>
       <Prompt>FECHA_REGISTRO</Prompt>
     </ReportParameter>
-    <ReportParameter Name="STATUS">
-      <DataType>String</DataType>
-      <Prompt>STATUS</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>StatusDataSet</DataSetName>
-          <ValueField>valor</ValueField>
-          <LabelField>des</LabelField>
-        </DataSetReference>
-      </ValidValues>
-    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -693,14 +708,9 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>FECHA_REGISTRO</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>STATUS</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

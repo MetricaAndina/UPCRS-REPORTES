@@ -15,20 +15,15 @@
         <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
-            <Value>=UCase(Parameters!AREA.Value)</Value>
+            <Value>=Parameters!AREA.Value</Value>
           </QueryParameter>
           <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_INICIO.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_FIN.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
+            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT        CARPETA, USUARIO, `NOMBRE DE USUARIO`, Permisos, FechaRegistro, Area, Estado
 FROM            VISTA_CARPETAS_SERVER
-WHERE        (UPPER(Area) = ?) AND (FechaRegistro BETWEEN ? AND ?)</CommandText>
+WHERE        (UPPER(Area) = ?) AND (FechaRegistro = ?)</CommandText>
       </Query>
       <Fields>
         <Field Name="CARPETA">
@@ -629,78 +624,6 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox4">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>del </Value>
-                      <Style>
-                        <FontSize>16pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.30528cm</Top>
-              <Left>8.80993cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>1.23132cm</Width>
-              <ZIndex>5</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox5">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Format(Parameters!FECHA_INICIO.Value,"dd/MM/yyyy")</Value>
-                      <Style>
-                        <FontSize>16pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.30528cm</Top>
-              <Left>10.18235cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>3.36084cm</Width>
-              <ZIndex>6</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox6">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -722,10 +645,10 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.30528cm</Top>
-              <Left>13.64902cm</Left>
+              <Left>8.73938cm</Left>
               <Height>0.84102cm</Height>
               <Width>0.83306cm</Width>
-              <ZIndex>7</ZIndex>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -744,7 +667,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Parameters!FECHA_FIN.Value,"dd/MM/yyyy")</Value>
+                      <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -758,10 +681,10 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.30528cm</Top>
-              <Left>14.55264cm</Left>
+              <Left>9.643cm</Left>
               <Height>0.84102cm</Height>
               <Width>3.26723cm</Width>
-              <ZIndex>8</ZIndex>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -865,23 +788,14 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="FECHA_INICIO">
+    <ReportParameter Name="FECHA_REGISTRO">
       <DataType>DateTime</DataType>
       <DefaultValue>
         <Values>
           <Value>=Today()</Value>
         </Values>
       </DefaultValue>
-      <Prompt>FECHA_INICIO</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="FECHA_FIN">
-      <DataType>DateTime</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>=Today()</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>FECHA_FIN</Prompt>
+      <Prompt>FECHA_REGISTRO</Prompt>
     </ReportParameter>
     <ReportParameter Name="AREA">
       <DataType>String</DataType>
@@ -903,12 +817,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>FECHA_INICIO</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>FECHA_FIN</ParameterName>
+          <ParameterName>FECHA_REGISTRO</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>

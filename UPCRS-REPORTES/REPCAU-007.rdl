@@ -121,7 +121,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Descripcion</Value>
+                                  <Value>Descripción</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -154,7 +154,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha Creacion Cuenta</Value>
+                                  <Value>Fecha Creación Cuenta</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -431,18 +431,54 @@
             <Top>0.89641cm</Top>
             <Left>5.39433cm</Left>
             <Height>1.2cm</Height>
-            <Width>23.93442cm</Width>
+            <Width>23.93443cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>* Validar si existe aprobación para tener activa la opción, de lo contrario gestionar el retiro</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#1f497d</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>2.77495cm</Top>
+            <Left>5.36787cm</Left>
+            <Height>0.6cm</Height>
+            <Width>16.59318cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>11.54675in</Width>
+      <Width>11.54676in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -484,7 +520,7 @@
               <Top>0.54363cm</Top>
               <Left>5.36787cm</Left>
               <Height>1.64359cm</Height>
-              <Width>14.05255cm</Width>
+              <Width>20.11151cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -500,7 +536,7 @@
               <Top>2.48391cm</Top>
               <Left>0.04974cm</Left>
               <Height>0cm</Height>
-              <Width>20.90526cm</Width>
+              <Width>28.23422cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>

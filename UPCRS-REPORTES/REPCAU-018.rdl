@@ -15,41 +15,29 @@
         <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
-            <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
+            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT        CODIGO, Nombre, Descripcion, DATE_FORMAT(Fecha_Creacion, '%d/%m/%Y') AS Fecha_Creacion, OU, FechaRegistro, Observacion
-FROM            VISTA_Risk013C02AdVsPla
-WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
+        <CommandText>SELECT        UserID, Nombre, ain_NombreCompleto, FechaRegistro
+FROM            VISTA_Risk013C07PsVsPla
+WHERE        (FechaRegistro = ?)</CommandText>
       </Query>
       <Fields>
-        <Field Name="CODIGO">
-          <DataField>CODIGO</DataField>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Nombre">
           <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Descripcion">
-          <DataField>Descripcion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Fecha_Creacion">
-          <DataField>Fecha_Creacion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="OU">
-          <DataField>OU</DataField>
+        <Field Name="ain_NombreCompleto">
+          <DataField>ain_NombreCompleto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FechaRegistro">
           <DataField>FechaRegistro</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Observacion">
-          <DataField>Observacion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -58,59 +46,20 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix1">
+          <Tablix Name="Tablix2">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.86489cm</Width>
+                  <Width>3.33591cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.1954cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>3.57926cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>7.70761cm</Width>
+                  <Width>8.97154cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
                   <Height>0.6cm</Height>
                   <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox3">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>LOGIN</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e09c6d</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox9">
@@ -120,15 +69,13 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>TIPO</Value>
+                                  <Value>COD USUARIO</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -148,60 +95,23 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox5">
+                        <Textbox Name="Textbox11">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>FECHA CREACIÓN</Value>
+                                  <Value>USUARIO</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e09c6d</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox7">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>OBSERVACIONES</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -223,21 +133,21 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="CODIGO">
+                        <Textbox Name="UserID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!CODIGO.Value</Value>
+                                  <Value>=Fields!UserID.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>CODIGO</rd:DefaultName>
+                          <rd:DefaultName>UserID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -253,85 +163,21 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="OU">
+                        <Textbox Name="Nombre">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!OU.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>OU</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Fecha_Creacion">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Fecha_Creacion.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Fecha_Creacion</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Observacion">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Observacion.Value</Value>
+                                  <Value>=Fields!Nombre.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Observacion</rd:DefaultName>
+                          <rd:DefaultName>Nombre</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -353,8 +199,6 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
               <TablixMembers>
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -368,10 +212,10 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ReportesDataSet</DataSetName>
-            <Top>0.54204cm</Top>
-            <Left>4.56916cm</Left>
+            <Top>0.78017cm</Top>
+            <Left>4.93958cm</Left>
             <Height>1.2cm</Height>
-            <Width>17.34716cm</Width>
+            <Width>12.30745cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -382,7 +226,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
         <Height>1.30208in</Height>
         <Style />
       </Body>
-      <Width>9.00695in</Width>
+      <Width>9.26736in</Width>
       <Page>
         <PageHeader>
           <Height>2.52395cm</Height>
@@ -404,7 +248,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
             <Line Name="Line1">
               <Top>2.48391cm</Top>
               <Height>0cm</Height>
-              <Width>22.87764cm</Width>
+              <Width>23.5391cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -453,23 +297,26 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Cuentas en Active Directory que no se encuentran en las bases oficiales (OFIPLAN, Genéricas, Adicionales, Outsourcing)</Value>
+                      <Value>Usuarios con permisos activos en Interfaz PeopleSoft que no están en OFIPLAN</Value>
                       <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontFamily>Calibri</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <TextDecoration>None</TextDecoration>
                       </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Center</TextAlign>
+                    <TextAlign>Left</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.94685cm</Top>
-              <Left>4.93958cm</Left>
-              <Height>1.41676cm</Height>
-              <Width>16.52695cm</Width>
+              <Top>0.8763cm</Top>
+              <Left>5.01014cm</Left>
+              <Height>0.74648cm</Height>
+              <Width>16.97674cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -508,8 +355,8 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.18521cm</Top>
-              <Left>18.32743cm</Left>
+              <Top>0.19403cm</Top>
+              <Left>19.60153cm</Left>
               <Height>0.6cm</Height>
               <Width>2.05021cm</Width>
               <Style>
@@ -539,8 +386,8 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>TotalPages</rd:DefaultName>
-              <Top>0.18521cm</Top>
-              <Left>20.48347cm</Left>
+              <Top>0.19403cm</Top>
+              <Left>21.75757cm</Left>
               <Height>0.6cm</Height>
               <Width>1.43285cm</Width>
               <ZIndex>1</ZIndex>
@@ -557,7 +404,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
             <Line Name="Line2">
               <Top>0cm</Top>
               <Height>0cm</Height>
-              <Width>22.87764cm</Width>
+              <Width>23.5391cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -580,8 +427,8 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.18521cm</Top>
-              <Left>0.17639cm</Left>
+              <Top>0.19403cm</Top>
+              <Left>0.14111cm</Left>
               <Height>0.6cm</Height>
               <Width>3.21438cm</Width>
               <ZIndex>3</ZIndex>
@@ -610,8 +457,8 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.18521cm</Top>
-              <Left>3.46132cm</Left>
+              <Top>0.19403cm</Top>
+              <Left>3.42604cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>4</ZIndex>

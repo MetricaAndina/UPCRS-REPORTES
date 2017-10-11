@@ -77,6 +77,10 @@
       <Name>REPCAU-017.rdl</Name>
       <FullPath>REPCAU-017.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>REPCAU-018.rdl</Name>
+      <FullPath>REPCAU-018.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

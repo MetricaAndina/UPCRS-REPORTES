@@ -608,7 +608,6 @@ WHERE        (FechaRegistro = ?)</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line2">
-              <Top>0cm</Top>
               <Height>0cm</Height>
               <Width>23.5391cm</Width>
               <ZIndex>2</ZIndex>
@@ -699,6 +698,11 @@ WHERE        (FechaRegistro = ?)</CommandText>
   <ReportParameters>
     <ReportParameter Name="FECHA_REGISTRO">
       <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Today()</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>FECHA_REGISTRO</Prompt>
     </ReportParameter>
   </ReportParameters>

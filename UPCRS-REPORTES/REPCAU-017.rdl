@@ -442,7 +442,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
             <Top>0.93892cm</Top>
             <Left>0.86995cm</Left>
             <Height>1.2cm</Height>
-            <Width>21.36387cm</Width>
+            <Width>21.36386cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -629,7 +629,6 @@ WHERE        (FechaRegistro = ?)</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line2">
-              <Top>0cm</Top>
               <Height>0cm</Height>
               <Width>23.5391cm</Width>
               <ZIndex>2</ZIndex>

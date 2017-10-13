@@ -316,7 +316,7 @@ where AdiAd.fechaRegistro = ?</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DS_Datos</DataSetName>
-            <Top>1.24037cm</Top>
+            <Top>0.49389cm</Top>
             <Left>0.04974cm</Left>
             <Height>1.2cm</Height>
             <Width>15.56069cm</Width>
@@ -327,10 +327,10 @@ where AdiAd.fechaRegistro = ?</CommandText>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>0.70833in</Height>
         <Style />
       </Body>
-      <Width>8.77084in</Width>
+      <Width>6.90626in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -356,7 +356,7 @@ where AdiAd.fechaRegistro = ?</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.89641cm</Top>
-              <Left>5.36787cm</Left>
+              <Left>2.68181cm</Left>
               <Height>0.84102cm</Height>
               <Width>14.05255cm</Width>
               <Style>
@@ -373,7 +373,7 @@ where AdiAd.fechaRegistro = ?</CommandText>
               <Top>2.48391cm</Top>
               <Left>0.04974cm</Left>
               <Height>0cm</Height>
-              <Width>20.90526cm</Width>
+              <Width>17.22755cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -404,9 +404,40 @@ where AdiAd.fechaRegistro = ?</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>0.92604cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.17639cm</Top>
+              <Left>13.80808cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
           <Style>
             <Border>
               <Style>None</Style>
@@ -414,7 +445,7 @@ where AdiAd.fechaRegistro = ?</CommandText>
           </Style>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageWidth>22.3cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
         <TopMargin>2cm</TopMargin>

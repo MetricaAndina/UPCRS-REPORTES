@@ -78,13 +78,13 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.32562cm</Width>
+                  <Width>4.00812cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.46667cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.39417cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -371,7 +371,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>3.88938cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox24">
                         <CanGrow>true</CanGrow>
@@ -421,7 +421,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>3.88938cm</Size>
                     <CellContents>
                       <Textbox Name="CARPETA1">
                         <CanGrow>true</CanGrow>
@@ -459,21 +459,19 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ReportesDataSet</DataSetName>
-            <Top>0.56851cm</Top>
-            <Left>3.2509cm</Left>
+            <Top>0.75373cm</Top>
+            <Left>0.45109cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.29229cm</Width>
+            <Width>16.25834cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Line Name="Line2">
-            <Top>2.39889cm</Top>
-            <Left>0.15717cm</Left>
+          <Line Name="Line1">
             <Height>0cm</Height>
-            <Width>21.06242cm</Width>
+            <Width>21.59957cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -482,28 +480,16 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             </Style>
           </Line>
         </ReportItems>
-        <Height>0.95833in</Height>
+        <Height>1.03125in</Height>
         <Style />
       </Body>
-      <Width>8.36459in</Width>
+      <Width>8.58836in</Width>
       <Page>
         <PageHeader>
-          <Height>2.52395cm</Height>
+          <Height>2.18475cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Image Name="Image1">
-              <Source>Embedded</Source>
-              <Value>logoupc</Value>
-              <Sizing>FitProportional</Sizing>
-              <Height>2.39889cm</Height>
-              <Width>4.83375cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
             <Textbox Name="Textbox1">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -511,7 +497,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Relación de Carpetas Compartidas de Servidores </Value>
+                      <Value>Relación de Carpetas Compartidas de Servidores de</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -524,59 +510,10 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.3937cm</Top>
-              <Left>5.16889cm</Left>
+              <Top>0.17638cm</Top>
+              <Left>1.84936cm</Left>
               <Height>0.84102cm</Height>
-              <Width>15.01882cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Line Name="Line1">
-              <Top>2.48391cm</Top>
-              <Left>0.04974cm</Left>
-              <Height>0cm</Height>
-              <Width>21.16985cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
-            <Textbox Name="Textbox2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>de  </Value>
-                      <Style>
-                        <FontSize>16pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.30528cm</Top>
-              <Left>5.16889cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>0.81069cm</Width>
-              <ZIndex>3</ZIndex>
+              <Width>13.89875cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -608,11 +545,11 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.30528cm</Top>
-              <Left>6.08542cm</Left>
+              <Top>0.17638cm</Top>
+              <Left>15.9245cm</Left>
               <Height>0.84102cm</Height>
               <Width>2.5834cm</Width>
-              <ZIndex>4</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -644,11 +581,11 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.30528cm</Top>
-              <Left>8.73938cm</Left>
+              <Top>1.15851cm</Top>
+              <Left>7.87562cm</Left>
               <Height>0.84102cm</Height>
-              <Width>0.83306cm</Width>
-              <ZIndex>5</ZIndex>
+              <Width>0.70077cm</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -680,22 +617,37 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.30528cm</Top>
-              <Left>9.643cm</Left>
+              <Top>1.15851cm</Top>
+              <Left>8.7175cm</Left>
               <Height>0.84102cm</Height>
-              <Width>5.19869cm</Width>
-              <ZIndex>6</ZIndex>
+              <Width>4.77536cm</Width>
+              <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
+                <VerticalAlign>Top</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Image Name="logoupc">
+              <Source>Embedded</Source>
+              <Value>logoupc60x60</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.17638cm</Top>
+              <Left>0.21486cm</Left>
+              <Height>1.5cm</Height>
+              <Width>1.5cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
           </ReportItems>
           <Style>
             <Border>
@@ -704,7 +656,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.03188cm</Height>
+          <Height>1.09389cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -715,36 +667,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>N° Páginas:</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>16.33424cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.05021cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="TotalPages">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Globals!TotalPages</Value>
+                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -753,12 +676,11 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>TotalPages</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>18.455cm</Left>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.3175cm</Top>
+              <Left>16.4754cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>1</ZIndex>
+              <Width>4.80188cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -769,6 +691,17 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Line Name="Line2">
+              <Top>0.17639cm</Top>
+              <Height>0cm</Height>
+              <Width>21.59957cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
           </ReportItems>
           <Style>
             <Border>
@@ -778,10 +711,10 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
@@ -868,6 +801,12 @@ r1bp1alonXUUy62++H9ib20yZqxpesr5d/bqkc7apTo5UcnvSqEwZRGz9LHHcN1BPd32XyjLdyPZbX11
 FT5u2kYRCW+lHitLWW2/690cnVtZo/0bvy2J5WlHL7aDC5eptL067A25mIMukl/l7y1Wtq7KTsuGxL16sRscf3xgytAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logoupc60x60">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>

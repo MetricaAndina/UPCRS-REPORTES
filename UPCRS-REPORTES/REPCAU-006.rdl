@@ -398,14 +398,14 @@ WHERE        (FechaRegistro = ?)</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="FechaRegistro1">
+                        <Textbox Name="FechaRegistro">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Format(Fields!FechaRegistro.Value, "dd/MM/yyyy")</Value>
+                                  <Value>=Format(Fields!FechaRegistro.Value,"dd/MM/yyyy")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -414,7 +414,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>FechaRegistro1</rd:DefaultName>
+                          <rd:DefaultName>FechaRegistro</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -527,8 +527,19 @@ WHERE        (FechaRegistro = ?)</CommandText>
               </Border>
             </Style>
           </Tablix>
+          <Line Name="Line2">
+            <Top>2.41654cm</Top>
+            <Height>0cm</Height>
+            <Width>24.6022cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
         </ReportItems>
-        <Height>0.89584in</Height>
+        <Height>0.9514in</Height>
         <Style />
       </Body>
       <Width>9.90466in</Width>
@@ -675,16 +686,6 @@ WHERE        (FechaRegistro = ?)</CommandText>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Line Name="Line2">
-              <Top>0.14111cm</Top>
-              <Height>0cm</Height>
-              <Width>24.6022cm</Width>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
             <Textbox Name="Textbox18">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -706,7 +707,6 @@ WHERE        (FechaRegistro = ?)</CommandText>
               <Left>19.14959cm</Left>
               <Height>0.6cm</Height>
               <Width>4.80188cm</Width>
-              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

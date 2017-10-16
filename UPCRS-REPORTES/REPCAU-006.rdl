@@ -530,7 +530,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
           <Line Name="Line2">
             <Top>2.41654cm</Top>
             <Height>0cm</Height>
-            <Width>24.6022cm</Width>
+            <Width>25.15784cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -583,9 +583,8 @@ WHERE        (FechaRegistro = ?)</CommandText>
             </Textbox>
             <Line Name="Line1">
               <Top>1.77023cm</Top>
-              <Left>0.0386cm</Left>
               <Height>0cm</Height>
-              <Width>24.56361cm</Width>
+              <Width>25.15784cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

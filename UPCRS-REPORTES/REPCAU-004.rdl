@@ -687,7 +687,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Left</TextAlign>
+                    <TextAlign>Right</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>

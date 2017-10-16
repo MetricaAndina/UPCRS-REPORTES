@@ -588,15 +588,15 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Left</TextAlign>
+                    <TextAlign>Right</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.17639cm</Top>
-              <Left>20.74805cm</Left>
+              <Left>19.87492cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.80188cm</Width>
+              <Width>4.35208cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>

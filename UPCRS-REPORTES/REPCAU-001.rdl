@@ -435,14 +435,14 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.82292in</Height>
+        <Height>0.83334in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>8.24839in</Width>
+      <Width>7.21714in</Width>
       <Page>
         <PageHeader>
           <Height>2.37243cm</Height>
@@ -571,7 +571,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
             <Line Name="Line1">
               <Top>2.19569cm</Top>
               <Height>0cm</Height>
-              <Width>20.92446cm</Width>
+              <Width>18.33154cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -603,15 +603,15 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Left</TextAlign>
+                    <TextAlign>Right</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>15.78207cm</Left>
+              <Top>0.21167cm</Top>
+              <Left>13.13624cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.80188cm</Width>
+              <Width>3.55044cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -625,7 +625,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
             <Line Name="Line2">
               <Top>0.03528cm</Top>
               <Height>0cm</Height>
-              <Width>20.92446cm</Width>
+              <Width>18.33154cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

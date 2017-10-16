@@ -815,7 +815,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Left</TextAlign>
+                    <TextAlign>Right</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>

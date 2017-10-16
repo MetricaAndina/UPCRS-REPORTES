@@ -105,6 +105,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                                 <TextRun>
                                   <Value>NOMBRE DE USUARIO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -138,6 +139,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                                 <TextRun>
                                   <Value>LOGIN DE USUARIO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -171,6 +173,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                                 <TextRun>
                                   <Value>PERMISOS</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -204,6 +207,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                                 <TextRun>
                                   <Value>ESTADO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -241,7 +245,9 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NOMBRE_DE_USUARIO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -272,7 +278,9 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!USUARIO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -303,7 +311,9 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Permisos.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -334,7 +344,9 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Estado.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -382,6 +394,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                               <TextRun>
                                 <Value>CARPETA</Value>
                                 <Style>
+                                  <FontSize>9pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -431,7 +444,9 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!CARPETA.Value</Value>
-                                <Style />
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
@@ -462,7 +477,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             <Top>0.35685cm</Top>
             <Left>0.45109cm</Left>
             <Height>1.2cm</Height>
-            <Width>23.77988cm</Width>
+            <Width>23.77989cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

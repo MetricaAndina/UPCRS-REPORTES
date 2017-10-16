@@ -89,6 +89,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                                 <TextRun>
                                   <Value>LOGIN</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -122,6 +123,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                                 <TextRun>
                                   <Value>TIPO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -157,6 +159,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                                 <TextRun>
                                   <Value>FECHA CREACIÓN</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -192,6 +195,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                                 <TextRun>
                                   <Value>OBSERVACIONES</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -231,7 +235,9 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!CODIGO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -261,7 +267,9 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!OU.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -293,7 +301,9 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Fecha_Creacion.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -325,7 +335,9 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Observacion.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -496,7 +508,6 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Line Name="Line2">
-              <Top>0cm</Top>
               <Height>0cm</Height>
               <Width>27.56076cm</Width>
               <Style>

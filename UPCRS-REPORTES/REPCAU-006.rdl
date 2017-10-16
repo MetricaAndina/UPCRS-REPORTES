@@ -100,6 +100,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>N°</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -133,6 +134,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>CÓDIGO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -166,6 +168,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>NOMBRE</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -199,6 +202,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>FECHA DE CREACIÓN</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -232,6 +236,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>FECHA  DE CADUCIDAD</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -265,6 +270,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>LAST LOGON</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -302,7 +308,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=RowNumber(Nothing)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -322,7 +330,6 @@ WHERE        (FechaRegistro = ?)</CommandText>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -335,7 +342,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Codigo.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -365,7 +374,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NombreCompleto.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -395,7 +406,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Format(Fields!FechaRegistro.Value, "dd/MM/yyyy")</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -425,7 +438,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Format(Fields!FechaDeCaducidad.Value, "dd/MM/yyyy")</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -455,7 +470,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Format(Fields!UltimoLogeo.Value, "dd/MM/yyyy")</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -503,7 +520,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
             <Top>0.28787cm</Top>
             <Left>0.3947cm</Left>
             <Height>1.2cm</Height>
-            <Width>23.55677cm</Width>
+            <Width>23.55676cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

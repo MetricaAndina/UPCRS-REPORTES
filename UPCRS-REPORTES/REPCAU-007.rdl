@@ -90,6 +90,7 @@
                                 <TextRun>
                                   <Value>LOGIN</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -123,6 +124,7 @@
                                 <TextRun>
                                   <Value>Descripción</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -156,6 +158,7 @@
                                 <TextRun>
                                   <Value>Fecha Creación Cuenta</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -189,6 +192,7 @@
                                 <TextRun>
                                   <Value>Password No Expira</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -222,6 +226,7 @@
                                 <TextRun>
                                   <Value>OU</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -259,7 +264,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!LOGIN.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -290,7 +297,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Descripcion.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -321,7 +330,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!FechaCreacionCuenta.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -352,7 +363,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!PwdNoExpira.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -383,7 +396,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!OU.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -428,8 +443,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DS_Datos</DataSetName>
-            <Top>0.89641cm</Top>
-            <Left>5.39433cm</Left>
+            <Top>0.17639cm</Top>
             <Height>1.2cm</Height>
             <Width>23.93443cm</Width>
             <Style>
@@ -459,8 +473,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.77495cm</Top>
-            <Left>5.36787cm</Left>
+            <Top>1.6637cm</Top>
             <Height>0.6cm</Height>
             <Width>16.59318cm</Width>
             <ZIndex>1</ZIndex>
@@ -475,10 +488,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.04167in</Height>
         <Style />
       </Body>
-      <Width>11.54676in</Width>
+      <Width>10.08843in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -536,7 +549,7 @@
               <Top>2.48391cm</Top>
               <Left>0.04974cm</Left>
               <Height>0cm</Height>
-              <Width>28.23422cm</Width>
+              <Width>24.95339cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -552,7 +565,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>0.68792cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <Style>
@@ -561,8 +574,8 @@
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageHeight>22.3cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
         <TopMargin>2cm</TopMargin>

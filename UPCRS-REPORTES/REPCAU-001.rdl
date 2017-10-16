@@ -139,6 +139,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                                 <TextRun>
                                   <Value>AREA</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -172,6 +173,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                                 <TextRun>
                                   <Value>IP</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -205,6 +207,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                                 <TextRun>
                                   <Value>HOST</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -238,6 +241,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                                 <TextRun>
                                   <Value>STATUS</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -275,7 +279,9 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!AREA.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -306,7 +312,9 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!IP.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -337,7 +345,9 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!HOST.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -368,7 +378,9 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!STATUS.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />

@@ -99,6 +99,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>LOGIN</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -132,6 +133,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>OU ORIGEN</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -165,6 +167,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                                 <TextRun>
                                   <Value>BASE CORRECTA</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -202,7 +205,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!CODIGOUSUARIO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -232,7 +237,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!OU_Origen.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -262,7 +269,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Base_Correcta.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />

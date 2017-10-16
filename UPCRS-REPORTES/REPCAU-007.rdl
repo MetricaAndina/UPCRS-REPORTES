@@ -15,18 +15,16 @@
         <DataSourceName>DS_Cuentas</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
-            <Value>=Parameters!Fec_Reg.Value</Value>
+            <Value>=Parameters!Fec_Anterior.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!Fec_Actual.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!Estado.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>select 
-	Login, 
-    Descripcion, 
-    DATE_FORMAT(FechaCreacionCuenta,"%d/%m/%Y") FechaCreacionCuenta,
-    PwdNoExpira,
-    OU
-    
- from VISTA_Risk013C08AdPwdNoExp 
- WHERE FechaRegistro = ?</CommandText>
+        <CommandText>CALL PROC_Risk013C08_DELTA(?,?,?)</CommandText>
       </Query>
       <Fields>
         <Field Name="LOGIN">
@@ -37,9 +35,13 @@
           <DataField>Descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="FechaCreacionCuenta">
           <DataField>FechaCreacionCuenta</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="PwdNoExpira">
           <DataField>PwdNoExpira</DataField>
@@ -47,6 +49,44 @@
         </Field>
         <Field Name="OU">
           <DataField>OU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Deshabilitado">
+          <DataField>Deshabilitado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FechaRegistro">
+          <DataField>FechaRegistro</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Comparacion">
+          <DataField>Comparacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DS_Estado">
+      <Query>
+        <DataSourceName>DS_Cuentas</DataSourceName>
+        <CommandText>SELECT        'Todos' AS des, 'Nuevo,Existente,Eliminado' AS valor
+FROM            VISTA_RiskCtl001OutLL V1
+UNION 
+SELECT        'Nuevo' AS des, 'Nuevo' AS valor
+FROM            VISTA_RiskCtl001OutLL V1
+UNION
+SELECT        'Existente' AS des, 'Existente' AS valor
+FROM           VISTA_RiskCtl001OutLL V2
+UNION
+SELECT        'Eliminado' AS des, 'Eliminado' AS valor
+FROM            VISTA_RiskCtl001OutLL V3</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Valor">
+          <DataField>valor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="des">
+          <DataField>des</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -63,13 +103,16 @@
                   <Width>4.03458cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>9.7011cm</Width>
+                  <Width>7.96522cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.14042cm</Width>
+                  <Width>2.92334cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.55833cm</Width>
+                  <Width>2.27541cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -77,7 +120,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.9175cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -249,6 +292,40 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Comparacion</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -329,7 +406,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!FechaCreacionCuenta.Value</Value>
+                                  <Value>=Format(Fields!FechaCreacionCuenta.Value,"dd/MM/yyyy")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -419,12 +496,46 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Comparacion">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Comparacion.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Comparacion</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -444,8 +555,8 @@
             </TablixRowHierarchy>
             <DataSetName>DS_Datos</DataSetName>
             <Top>0.17639cm</Top>
-            <Height>1.2cm</Height>
-            <Width>23.93443cm</Width>
+            <Height>1.5175cm</Height>
+            <Width>22.19855cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -491,25 +602,13 @@
         <Height>1.04167in</Height>
         <Style />
       </Body>
-      <Width>10.08843in</Width>
+      <Width>10.40726in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Image Name="Image1">
-              <Source>Embedded</Source>
-              <Value>logoupc</Value>
-              <Sizing>FitProportional</Sizing>
-              <Height>2.39889cm</Height>
-              <Width>4.83375cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
             <Textbox Name="Textbox1">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -531,10 +630,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.54363cm</Top>
-              <Left>5.36787cm</Left>
+              <Left>2.08704cm</Left>
               <Height>1.64359cm</Height>
               <Width>20.11151cm</Width>
-              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -550,13 +648,28 @@
               <Left>0.04974cm</Left>
               <Height>0cm</Height>
               <Width>24.95339cm</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
                 </Border>
               </Style>
             </Line>
+            <Image Name="logoupc">
+              <Source>Embedded</Source>
+              <Value>logoupc60x60</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.52cm</Top>
+              <Left>0.04974cm</Left>
+              <Height>1.5cm</Height>
+              <Width>1.5cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
           </ReportItems>
           <Style>
             <Border>
@@ -586,9 +699,30 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="Fec_Reg">
+    <ReportParameter Name="Fec_Anterior">
       <DataType>DateTime</DataType>
-      <Prompt>Fec_Reg</Prompt>
+      <Prompt>Fec_Anterior</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Fec_Actual">
+      <DataType>DateTime</DataType>
+      <Prompt>Fec_Actual</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Estado">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DS_Estado</DataSetName>
+          <ValueField>Valor</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Estado</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DS_Estado</DataSetName>
+          <ValueField>Valor</ValueField>
+          <LabelField>des</LabelField>
+        </DataSetReference>
+      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -597,9 +731,19 @@
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Fec_Reg</ParameterName>
+          <ParameterName>Fec_Anterior</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Fec_Actual</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Estado</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -645,6 +789,12 @@ r1bp1alonXUUy62++H9ib20yZqxpesr5d/bqkc7apTo5UcnvSqEwZRGz9LHHcN1BPd32XyjLdyPZbX11
 FT5u2kYRCW+lHitLWW2/690cnVtZo/0bvy2J5WlHL7aDC5eptL067A25mIMukl/l7y1Wtq7KTsuGxL16sRscf3xgytAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logoupc60x60">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>

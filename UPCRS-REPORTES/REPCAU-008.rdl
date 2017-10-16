@@ -29,7 +29,7 @@
             <Value>=Parameters!ESTADO.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>CALL  seguridad.PROC_RiskCtl001OutLL_DELTA2(?, ?, ?)</CommandText>
+        <CommandText>CALL  seguridad.PROC_RiskCtl001OutLL_DELTA(?, ?, ?)</CommandText>
       </Query>
       <Fields>
         <Field Name="Codigo">
@@ -108,7 +108,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                   <Width>3.22193cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6.15881cm</Width>
+                  <Width>5.84131cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>5.26013cm</Width>
@@ -120,7 +120,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                   <Width>4.09506cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.8175cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -567,7 +567,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         <Height>1in</Height>
         <Style />
       </Body>
-      <Width>9.71875in</Width>
+      <Width>9.94792in</Width>
       <Page>
         <PageHeader>
           <Height>2.34307cm</Height>
@@ -627,7 +627,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             <Line Name="Line1">
               <Top>2.19287cm</Top>
               <Height>0cm</Height>
-              <Width>24.68563cm</Width>
+              <Width>25.26771cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -717,7 +717,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             <Line Name="Line2">
               <Top>0.17639cm</Top>
               <Height>0cm</Height>
-              <Width>24.68563cm</Width>
+              <Width>25.26771cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

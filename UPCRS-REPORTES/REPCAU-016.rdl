@@ -84,6 +84,12 @@ WHERE        (FechaRegistro = ?)</CommandText>
                 <TablixColumn>
                   <Width>5.93958cm</Width>
                 </TablixColumn>
+                <TablixColumn>
+                  <Width>5.70146cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>5.17355cm</Width>
+                </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
@@ -141,6 +147,72 @@ WHERE        (FechaRegistro = ?)</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>FECHA DE CADUCIDAD OFICIAL</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>FECHA DE CADUCIDAD AD</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -220,12 +292,74 @@ WHERE        (FechaRegistro = ?)</CommandText>
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="FechaCaducidadOficial">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!FechaCaducidadOficial.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>FechaCaducidadOficial</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="FechaCaducidadAD">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!FechaCaducidadAD.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>FechaCaducidadAD</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
               </TablixMembers>
@@ -241,10 +375,10 @@ WHERE        (FechaRegistro = ?)</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ReportesDataSet</DataSetName>
-            <Top>0.5685cm</Top>
-            <Left>7.93433cm</Left>
+            <Top>0.30392cm</Top>
+            <Left>0.29986cm</Left>
             <Height>1.2cm</Height>
-            <Width>10.13291cm</Width>
+            <Width>21.00792cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -255,30 +389,17 @@ WHERE        (FechaRegistro = ?)</CommandText>
         <Height>1.30208in</Height>
         <Style />
       </Body>
-      <Width>9.26736in</Width>
+      <Width>9.77778in</Width>
       <Page>
         <PageHeader>
-          <Height>2.52395cm</Height>
+          <Height>2.31228cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Image Name="Image1">
-              <Source>Embedded</Source>
-              <Value>logoupc</Value>
-              <Sizing>FitProportional</Sizing>
-              <Height>2.39889cm</Height>
-              <Width>4.83375cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
             <Line Name="Line1">
-              <Top>2.48391cm</Top>
+              <Top>2.07574cm</Top>
               <Height>0cm</Height>
-              <Width>23.5391cm</Width>
-              <ZIndex>1</ZIndex>
+              <Width>24.83556cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -292,7 +413,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CONTROL DE CREACIÓN DE CUENTAS ACEDEMICAS (FORMAL)</Value>
+                      <Value>CONTROL TRIMESTRAL DE CUENTAS</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -305,10 +426,11 @@ WHERE        (FechaRegistro = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Left>4.93958cm</Left>
+              <Top>0.25259cm</Top>
+              <Left>1.97625cm</Left>
               <Height>0.80574cm</Height>
               <Width>16.97674cm</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -337,16 +459,16 @@ WHERE        (FechaRegistro = ?)</CommandText>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Center</TextAlign>
+                    <TextAlign>Left</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.94685cm</Top>
-              <Left>4.93958cm</Left>
-              <Height>1.41676cm</Height>
-              <Width>16.97674cm</Width>
-              <ZIndex>3</ZIndex>
+              <Top>1.19944cm</Top>
+              <Left>1.97625cm</Left>
+              <Height>0.80574cm</Height>
+              <Width>22.48007cm</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -357,6 +479,21 @@ WHERE        (FechaRegistro = ?)</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Image Name="logoupc">
+              <Source>Embedded</Source>
+              <Value>logoupc60x60</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.25259cm</Top>
+              <Left>0.29986cm</Left>
+              <Height>1.5cm</Height>
+              <Width>1.5cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
           </ReportItems>
           <Style>
             <Border>
@@ -369,71 +506,9 @@ WHERE        (FechaRegistro = ?)</CommandText>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox18">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>N° Páginas:</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.19403cm</Top>
-              <Left>18.99771cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.05021cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="TotalPages">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Globals!TotalPages</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>TotalPages</rd:DefaultName>
-              <Top>0.19403cm</Top>
-              <Left>21.15375cm</Left>
-              <Height>0.6cm</Height>
-              <Width>1.43285cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Line Name="Line2">
               <Height>0cm</Height>
-              <Width>23.5391cm</Width>
-              <ZIndex>2</ZIndex>
+              <Width>24.83556cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -456,10 +531,10 @@ WHERE        (FechaRegistro = ?)</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.19403cm</Top>
-              <Left>0.14111cm</Left>
+              <Left>0.29986cm</Left>
               <Height>0.6cm</Height>
               <Width>3.21438cm</Width>
-              <ZIndex>3</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -486,10 +561,42 @@ WHERE        (FechaRegistro = ?)</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
               <Top>0.19403cm</Top>
-              <Left>3.42604cm</Left>
+              <Left>3.58479cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
-              <ZIndex>4</ZIndex>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox18">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.19403cm</Top>
+              <Left>19.65444cm</Left>
+              <Height>0.6cm</Height>
+              <Width>4.80188cm</Width>
+              <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -507,8 +614,8 @@ WHERE        (FechaRegistro = ?)</CommandText>
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageHeight>21cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
         <TopMargin>2cm</TopMargin>
@@ -583,6 +690,12 @@ r1bp1alonXUUy62++H9ib20yZqxpesr5d/bqkc7apTo5UcnvSqEwZRGz9LHHcN1BPd32XyjLdyPZbX11
 FT5u2kYRCW+lHitLWW2/690cnVtZo/0bvy2J5WlHL7aDC5eptL067A25mIMukl/l7y1Wtq7KTsuGxL16sRscf3xgytAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logoupc60x60">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>

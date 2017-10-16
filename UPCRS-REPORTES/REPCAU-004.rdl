@@ -78,13 +78,13 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.00812cm</Width>
+                  <Width>8.63833cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.46667cm</Width>
+                  <Width>3.73063cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.39417cm</Width>
+                  <Width>2.6323cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -371,7 +371,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>3.88938cm</Size>
+                    <Size>6.27863cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox24">
                         <CanGrow>true</CanGrow>
@@ -421,7 +421,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>3.88938cm</Size>
+                    <Size>6.27863cm</Size>
                     <CellContents>
                       <Textbox Name="CARPETA1">
                         <CanGrow>true</CanGrow>
@@ -459,10 +459,10 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ReportesDataSet</DataSetName>
-            <Top>0.75373cm</Top>
+            <Top>0.35685cm</Top>
             <Left>0.45109cm</Left>
             <Height>1.2cm</Height>
-            <Width>16.25834cm</Width>
+            <Width>23.77988cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -471,7 +471,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
           </Tablix>
           <Line Name="Line1">
             <Height>0cm</Height>
-            <Width>21.59957cm</Width>
+            <Width>24.57493cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -480,13 +480,13 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             </Style>
           </Line>
         </ReportItems>
-        <Height>1.03125in</Height>
+        <Height>0.86458in</Height>
         <Style />
       </Body>
-      <Width>8.58836in</Width>
+      <Width>9.67517in</Width>
       <Page>
         <PageHeader>
-          <Height>2.18475cm</Height>
+          <Height>1.97308cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -513,7 +513,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               <Top>0.17638cm</Top>
               <Left>1.84936cm</Left>
               <Height>0.84102cm</Height>
-              <Width>13.89875cm</Width>
+              <Width>13.86347cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -546,7 +546,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.17638cm</Top>
-              <Left>15.9245cm</Left>
+              <Left>15.78339cm</Left>
               <Height>0.84102cm</Height>
               <Width>2.5834cm</Width>
               <ZIndex>1</ZIndex>
@@ -581,8 +581,8 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.15851cm</Top>
-              <Left>7.87562cm</Left>
+              <Top>0.17638cm</Top>
+              <Left>18.47262cm</Left>
               <Height>0.84102cm</Height>
               <Width>0.70077cm</Width>
               <ZIndex>2</ZIndex>
@@ -617,8 +617,8 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.15851cm</Top>
-              <Left>8.7175cm</Left>
+              <Top>0.17638cm</Top>
+              <Left>19.27922cm</Left>
               <Height>0.84102cm</Height>
               <Width>4.77536cm</Width>
               <ZIndex>3</ZIndex>
@@ -656,7 +656,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.09389cm</Height>
+          <Height>1.19972cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -677,10 +677,10 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.3175cm</Top>
-              <Left>16.4754cm</Left>
+              <Top>0.35278cm</Top>
+              <Left>18.84701cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.80188cm</Width>
+              <Width>5.38396cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -694,7 +694,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             <Line Name="Line2">
               <Top>0.17639cm</Top>
               <Height>0cm</Height>
-              <Width>21.59957cm</Width>
+              <Width>24.57493cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -709,8 +709,8 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageHeight>21cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>
         <RightMargin>1cm</RightMargin>
         <TopMargin>1cm</TopMargin>

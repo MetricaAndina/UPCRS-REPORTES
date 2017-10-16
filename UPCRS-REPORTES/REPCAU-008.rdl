@@ -8,6 +8,11 @@
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>14edf5cf-5f3f-4258-97c4-51bbc3c927d8</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="EstadoDataSource">
+      <DataSourceReference>DS-REPORTE_MySQL</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>16686f9b-4088-4c59-98ad-dbdd8bd22298</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="ReportesDataSet">
@@ -15,13 +20,16 @@
         <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+            <Value>=Parameters!FECHA_ANTERIOR.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_ACTUAL_REGISTRO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!ESTADO.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT        Codigo, NombreCompleto, Descripcion, DATE_FORMAT(UltimoLogeo, '%d/%m/%Y') AS UltimoLogeo, DATE_FORMAT(FechaDeCaducidad, '%d/%m/%Y') 
-                         AS FechaDeCaducidad, DATE_FORMAT(FechaRegistro, '%d/%m/%Y') AS FechaRegistro, OU, diasLogon
-FROM            VISTA_RiskCtl001OutLL_7
-WHERE        FechaRegistro = ?</CommandText>
+        <CommandText>CALL  seguridad.PROC_RiskCtl001OutLL_DELTA2(?, ?, ?)</CommandText>
       </Query>
       <Fields>
         <Field Name="Codigo">
@@ -38,15 +46,15 @@ WHERE        FechaRegistro = ?</CommandText>
         </Field>
         <Field Name="UltimoLogeo">
           <DataField>UltimoLogeo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="FechaDeCaducidad">
           <DataField>FechaDeCaducidad</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="FechaRegistro">
           <DataField>FechaRegistro</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="OU">
           <DataField>OU</DataField>
@@ -55,6 +63,36 @@ WHERE        FechaRegistro = ?</CommandText>
         <Field Name="diasLogon">
           <DataField>diasLogon</DataField>
           <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="Comparacion">
+          <DataField>Comparacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="EstadoDataSet">
+      <Query>
+        <DataSourceName>EstadoDataSource</DataSourceName>
+        <CommandText>SELECT        'Todos' AS des, 'Nuevo,Existente,Eliminado' AS valor
+FROM            VISTA_RiskCtl001OutLL V1
+UNION 
+SELECT        'Nuevo' AS des, 'Nuevo' AS valor
+FROM            VISTA_RiskCtl001OutLL V1
+UNION
+SELECT        'Existente' AS des, 'Existente' AS valor
+FROM           VISTA_RiskCtl001OutLL V2
+UNION
+SELECT        'Eliminado' AS des, 'Eliminado' AS valor
+FROM            VISTA_RiskCtl001OutLL V3</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="des">
+          <DataField>des</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="valor">
+          <DataField>valor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -73,13 +111,16 @@ WHERE        FechaRegistro = ?</CommandText>
                   <Width>6.15881cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>7.0593cm</Width>
+                  <Width>5.26013cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.1161cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>4.09506cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -256,6 +297,40 @@ WHERE        FechaRegistro = ?</CommandText>
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>COMPARACIÓN</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -366,7 +441,7 @@ WHERE        FechaRegistro = ?</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!UltimoLogeo.Value</Value>
+                                  <Value>=Format(Fields!UltimoLogeo.Value,"dd/MM/yyyy")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -398,7 +473,7 @@ WHERE        FechaRegistro = ?</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!FechaDeCaducidad.Value</Value>
+                                  <Value>=Format(Fields!FechaDeCaducidad.Value,"dd/MM/yyyy")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -408,6 +483,38 @@ WHERE        FechaRegistro = ?</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>FechaDeCaducidad</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Comparacion">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Comparacion.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Comparacion</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -432,6 +539,7 @@ WHERE        FechaRegistro = ?</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -448,7 +556,7 @@ WHERE        FechaRegistro = ?</CommandText>
             <Top>0.53771cm</Top>
             <Left>0.26141cm</Left>
             <Height>1.2cm</Height>
-            <Width>23.6512cm</Width>
+            <Width>24.35203cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -534,7 +642,7 @@ WHERE        FechaRegistro = ?</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
+                      <Value>=Format(Parameters!FECHA_ACTUAL_REGISTRO.Value,"dd/MM/yyyy")</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -636,14 +744,30 @@ WHERE        FechaRegistro = ?</CommandText>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="FECHA_REGISTRO">
+    <ReportParameter Name="FECHA_ANTERIOR">
       <DataType>DateTime</DataType>
+      <Prompt>FECHA_ANTERIOR</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FECHA_ACTUAL_REGISTRO">
+      <DataType>DateTime</DataType>
+      <Prompt>FECHA_ACTUAL_REGISTRO</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ESTADO">
+      <DataType>String</DataType>
       <DefaultValue>
-        <Values>
-          <Value>=Today()</Value>
-        </Values>
+        <DataSetReference>
+          <DataSetName>EstadoDataSet</DataSetName>
+          <ValueField>valor</ValueField>
+        </DataSetReference>
       </DefaultValue>
-      <Prompt>FECHA_REGISTRO</Prompt>
+      <Prompt>ESTADO</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>EstadoDataSet</DataSetName>
+          <ValueField>valor</ValueField>
+          <LabelField>des</LabelField>
+        </DataSetReference>
+      </ValidValues>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -652,9 +776,19 @@ WHERE        FechaRegistro = ?</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>FECHA_REGISTRO</ParameterName>
+          <ParameterName>FECHA_ANTERIOR</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>FECHA_ACTUAL_REGISTRO</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>ESTADO</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

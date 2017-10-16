@@ -15,11 +15,32 @@
         <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
-            <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
+            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT        CODIGO, Nombre, Descripcion, DATE_FORMAT(Fecha_Creacion, '%d/%m/%Y') AS Fecha_Creacion, OU, FechaRegistro, Observacion
 FROM            VISTA_Risk013C02AdVsPla
+WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)
+UNION ALL
+SELECT        CODIGO, Nombre, Descripcion, DATE_FORMAT(Fecha_Creacion, '%d/%m/%Y') AS Fecha_Creacion, OU, FechaRegistro, Observacion
+FROM            VISTA_Risk013C02AdVsGen
+WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)
+UNION ALL
+SELECT        CODIGO, Nombre, Descripcion, DATE_FORMAT(Fecha_Creacion, '%d/%m/%Y') AS Fecha_Creacion, OU, FechaRegistro, Observacion
+FROM            VISTA_Risk013C02AdVsOut
+WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)
+UNION ALL
+SELECT        CODIGO, Nombre, Descripcion, DATE_FORMAT(Fecha_Creacion, '%d/%m/%Y') AS Fecha_Creacion, OU, FechaRegistro, Observacion
+FROM            VISTA_Risk013C02AdVsAdi
 WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
       </Query>
       <Fields>

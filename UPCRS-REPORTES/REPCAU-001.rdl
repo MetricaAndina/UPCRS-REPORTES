@@ -430,7 +430,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
           </Border>
         </Style>
       </Body>
-      <Width>8.40464in</Width>
+      <Width>8.24839in</Width>
       <Page>
         <PageHeader>
           <Height>2.37243cm</Height>
@@ -559,7 +559,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
             <Line Name="Line1">
               <Top>2.19569cm</Top>
               <Height>0cm</Height>
-              <Width>21.34779cm</Width>
+              <Width>20.92446cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -613,7 +613,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
             <Line Name="Line2">
               <Top>0.03528cm</Top>
               <Height>0cm</Height>
-              <Width>21.29805cm</Width>
+              <Width>20.92446cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

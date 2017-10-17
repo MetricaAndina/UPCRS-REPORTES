@@ -424,8 +424,8 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ReporteDataSet</DataSetName>
-            <Top>0.52599cm</Top>
-            <Left>2.69558cm</Left>
+            <Top>0.17639cm</Top>
+            <Left>0.19558cm</Left>
             <Height>1.2cm</Height>
             <Width>10cm</Width>
             <Style>
@@ -435,17 +435,17 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.83334in</Height>
+        <Height>0.64584in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>7.21714in</Width>
+      <Width>6.88381in</Width>
       <Page>
         <PageHeader>
-          <Height>2.37243cm</Height>
+          <Height>2.29305cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -571,7 +571,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
             <Line Name="Line1">
               <Top>2.19569cm</Top>
               <Height>0cm</Height>
-              <Width>18.33154cm</Width>
+              <Width>17.48487cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -587,7 +587,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.0848cm</Height>
+          <Height>1.03188cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -608,7 +608,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.21167cm</Top>
+              <Top>0.3175cm</Top>
               <Left>13.13624cm</Left>
               <Height>0.6cm</Height>
               <Width>3.55044cm</Width>
@@ -623,9 +623,9 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
               </Style>
             </Textbox>
             <Line Name="Line2">
-              <Top>0.03528cm</Top>
+              <Top>0.14111cm</Top>
               <Height>0cm</Height>
-              <Width>18.33154cm</Width>
+              <Width>17.48487cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -641,7 +641,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
           </Style>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageWidth>22.3cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
         <TopMargin>2cm</TopMargin>

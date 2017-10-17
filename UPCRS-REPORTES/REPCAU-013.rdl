@@ -15,16 +15,16 @@
         <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+            <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
           </QueryParameter>
           <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+            <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
           </QueryParameter>
           <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+            <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
           </QueryParameter>
           <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
+            <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandText>SELECT        CODIGO, Nombre, Descripcion, DATE_FORMAT(Fecha_Creacion, '%d/%m/%Y') AS Fecha_Creacion, OU, FechaRegistro, Observacion
@@ -412,20 +412,20 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.30208in</Height>
+        <Height>0.88541in</Height>
         <Style />
       </Body>
-      <Width>10.85069in</Width>
+      <Width>9.89236in</Width>
       <Page>
         <PageHeader>
-          <Height>2.79328cm</Height>
+          <Height>2.68745cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Line Name="Line1">
               <Top>2.48391cm</Top>
               <Height>0cm</Height>
-              <Width>27.56076cm</Width>
+              <Width>25.12659cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -524,13 +524,13 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.2259cm</Height>
+          <Height>0.98778cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Line Name="Line2">
               <Height>0cm</Height>
-              <Width>27.56076cm</Width>
+              <Width>25.12659cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -614,7 +614,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.17639cm</Top>
+              <Top>0.18521cm</Top>
               <Left>19.87492cm</Left>
               <Height>0.6cm</Height>
               <Width>4.35208cm</Width>
@@ -636,7 +636,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>21cm</PageHeight>
+        <PageHeight>22.3cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>

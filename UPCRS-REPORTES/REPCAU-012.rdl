@@ -76,25 +76,25 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.54518cm</Width>
+                  <Width>2.2806cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>4.28154cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.23784cm</Width>
+                  <Width>2.97326cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.23784cm</Width>
+                  <Width>3.05263cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.23784cm</Width>
+                  <Width>3.10555cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.23784cm</Width>
+                  <Width>2.57638cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.23784cm</Width>
+                  <Width>2.86742cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.23784cm</Width>
@@ -102,7 +102,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.9175cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -115,6 +115,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                                 <TextRun>
                                   <Value>USUARIO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -148,6 +149,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                                 <TextRun>
                                   <Value>NOMBRE</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -181,6 +183,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                                 <TextRun>
                                   <Value>CARGO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -214,6 +217,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                                 <TextRun>
                                   <Value>GERENCIA</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -247,6 +251,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                                 <TextRun>
                                   <Value>NOMBRE_GRUPO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -280,6 +285,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                                 <TextRun>
                                   <Value>GRUPO USUARIO</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -313,6 +319,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                                 <TextRun>
                                   <Value>COD. SISTEMA</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -346,6 +353,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                                 <TextRun>
                                   <Value>NOMBRE SISTEMA</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -383,7 +391,9 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Usuario.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -413,7 +423,9 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Nombre.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -443,7 +455,9 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Cargo.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -473,7 +487,9 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Area.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -503,7 +519,9 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!GRUPO.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -533,7 +551,9 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Grupo_Usuario.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -563,7 +583,9 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!COD_SISTEMA.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -593,7 +615,9 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!NOMBRE_SISTEMA.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -640,24 +664,24 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ReportesDataSet</DataSetName>
-            <Top>0.79058cm</Top>
-            <Left>0.26458cm</Left>
-            <Height>1.2cm</Height>
-            <Width>26.25376cm</Width>
+            <Top>0.42016cm</Top>
+            <Height>1.5175cm</Height>
+            <Width>24.37522cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <FontSize>9pt</FontSize>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.99664in</Height>
+        <Height>0.89247in</Height>
         <Style />
       </Body>
-      <Width>10.88466in</Width>
+      <Width>9.82216in</Width>
       <Page>
         <PageHeader>
-          <Height>2.2112cm</Height>
+          <Height>2.13182cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -698,7 +722,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
             <Line Name="Line1">
               <Top>1.99072cm</Top>
               <Height>0cm</Height>
-              <Width>27.64704cm</Width>
+              <Width>24.65725cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -729,7 +753,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.66687cm</Height>
+          <Height>1.4552cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -748,8 +772,8 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.44979cm</Top>
-              <Left>0.57308cm</Left>
+              <Top>0.53344cm</Top>
+              <Left>0.26458cm</Left>
               <Height>0.6cm</Height>
               <Width>3.21438cm</Width>
               <Style>
@@ -777,8 +801,8 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.44979cm</Top>
-              <Left>3.85801cm</Left>
+              <Top>0.53344cm</Top>
+              <Left>3.54951cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>1</ZIndex>
@@ -795,7 +819,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
             <Line Name="Line2">
               <Top>0.30868cm</Top>
               <Height>0cm</Height>
-              <Width>27.64704cm</Width>
+              <Width>24.65725cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -815,13 +839,13 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Right</TextAlign>
+                    <TextAlign>Left</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.53344cm</Top>
-              <Left>21.71646cm</Left>
+              <Left>19.85537cm</Left>
               <Height>0.6cm</Height>
               <Width>4.80188cm</Width>
               <ZIndex>3</ZIndex>
@@ -842,7 +866,7 @@ FROM            VISTA_OFISMART_DI2D</CommandText>
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>21cm</PageHeight>
+        <PageHeight>22.3cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>

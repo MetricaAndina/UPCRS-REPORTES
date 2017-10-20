@@ -79,9 +79,13 @@
     <DataSet Name="ControlOwnerDataSet">
       <Query>
         <DataSourceName>ReportesDataSource</DataSourceName>
-        <CommandText>SELECT ad_username FROM VISTA_PROPIETARIOS_DI2D WHERE FechaRegistro=CURDATE();</CommandText>
+        <CommandText>SELECT concat(ad_username, ' - ', Sig) ad_userSig, ad_username FROM VISTA_PROPIETARIOS_DI2D WHERE FechaRegistro=CURDATE();</CommandText>
       </Query>
       <Fields>
+        <Field Name="ad_userSig">
+          <DataField>ad_userSig</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="ad_username">
           <DataField>ad_username</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -940,7 +944,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         <DataSetReference>
           <DataSetName>ControlOwnerDataSet</DataSetName>
           <ValueField>ad_username</ValueField>
-          <LabelField>ad_username</LabelField>
+          <LabelField>ad_userSig</LabelField>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>

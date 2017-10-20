@@ -15,6 +15,9 @@
         <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
+            <Value>=Parameters!SISTEMA.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
             <Value>=Parameters!CONTROL_OWNER.Value</Value>
           </QueryParameter>
           <QueryParameter Name="?">
@@ -27,51 +30,63 @@
             <Value>=Parameters!COMPARACION.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>CALL PROC_SPRING_REPORTES_DI2D_DELTA(?, ?, ?, ?);</CommandText>
+        <CommandText>CALL PROC_SOCRATES_DI2D_DELTA(?,?, ?, ?, ?);</CommandText>
       </Query>
       <Fields>
-        <Field Name="Usuario">
-          <DataField>Usuario</DataField>
+        <Field Name="Autorizado">
+          <DataField>Autorizado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="App">
-          <DataField>App</DataField>
+        <Field Name="Nombre_Autorizado">
+          <DataField>Nombre Autorizado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Topico">
-          <DataField>Topico</DataField>
+        <Field Name="Rol">
+          <DataField>Rol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COD_TIPO_USUARIO">
+          <DataField>COD_TIPO_USUARIO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="permiso">
           <DataField>permiso</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ReporteCodigo">
-          <DataField>ReporteCodigo</DataField>
+        <Field Name="TipoUsuario">
+          <DataField>TipoUsuario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Cargo">
           <DataField>Cargo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Aplicacion">
-          <DataField>Aplicacion</DataField>
+        <Field Name="COD_APLICATIVO">
+          <DataField>COD_APLICATIVO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DescripcionLocal">
-          <DataField>DescripcionLocal</DataField>
+        <Field Name="APLICATIVO">
+          <DataField>APLICATIVO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Descripcion">
-          <DataField>Descripcion</DataField>
+        <Field Name="Descripción_de_la_aplicación">
+          <DataField>Descripción de la aplicación</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Nombre_Completo">
-          <DataField>Nombre Completo</DataField>
+        <Field Name="Funcion">
+          <DataField>Funcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescripcionFunc">
+          <DataField>DescripcionFunc</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Subarea">
           <DataField>Subarea</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Servidor">
+          <DataField>Servidor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Comparacion">
@@ -134,6 +149,24 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="GradoDataSet">
+      <Query>
+        <DataSourceName>ReportesDataSource</DataSourceName>
+        <CommandText>SELECT 'UPC' AS VALOR, 'UPC' AS DES FROM VISTA_PROPIETARIOS_DI2D
+UNION
+SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="VALOR">
+          <DataField>VALOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DES">
+          <DataField>DES</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -146,37 +179,43 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                   <Width>1.8208cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.05123cm</Width>
+                  <Width>2.44269cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.64284cm</Width>
+                  <Width>2.32534cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.18493cm</Width>
+                  <Width>2.20597cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.75505cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.55292cm</Width>
+                  <Width>1.8521cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.41521cm</Width>
+                  <Width>1.81208cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.65875cm</Width>
+                  <Width>1.70625cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.10352cm</Width>
+                  <Width>1.81248cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.865cm</Width>
+                  <Width>2.15604cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34125cm</Width>
+                  <Width>2.1825cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.63229cm</Width>
+                  <Width>1.70625cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.60583cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -396,7 +435,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>GRUPO POR TÓPICO</Value>
+                                  <Value>COD. TIPO USUARIO</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -430,7 +469,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>DESCRIPCIÓN GRUPO</Value>
+                                  <Value>TIPO USUARIO</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -464,7 +503,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>COD. DE APLICACIÓN</Value>
+                                  <Value>ROL</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -498,7 +537,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CONCEPTO</Value>
+                                  <Value>CÓD. APLICATIVO</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -532,7 +571,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>DESCRIPCIÓN CONCEPTO</Value>
+                                  <Value>APLICATIVO</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -566,7 +605,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>COMPARACIÓN</Value>
+                                  <Value>COD. FUNCIÓN</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -591,6 +630,74 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>NOMBRE</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>COMPARACIÓN</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -598,14 +705,14 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Usuario">
+                        <Textbox Name="Autorizado">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Usuario.Value</Value>
+                                  <Value>=Fields!Autorizado.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -614,7 +721,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Usuario</rd:DefaultName>
+                          <rd:DefaultName>Autorizado</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -630,14 +737,14 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Nombre_Completo">
+                        <Textbox Name="Nombre_Autorizado">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Nombre_Completo.Value</Value>
+                                  <Value>=Fields!Nombre_Autorizado.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -646,7 +753,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Nombre_Completo</rd:DefaultName>
+                          <rd:DefaultName>Nombre_Autorizado</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -790,14 +897,14 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Topico">
+                        <Textbox Name="COD_TIPO_USUARIO">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Topico.Value</Value>
+                                  <Value>=Fields!COD_TIPO_USUARIO.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -806,7 +913,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Topico</rd:DefaultName>
+                          <rd:DefaultName>COD_TIPO_USUARIO</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -822,14 +929,14 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="DescripcionLocal">
+                        <Textbox Name="TipoUsuario">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DescripcionLocal.Value</Value>
+                                  <Value>=Fields!TipoUsuario.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -838,7 +945,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>DescripcionLocal</rd:DefaultName>
+                          <rd:DefaultName>TipoUsuario</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -854,14 +961,14 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="App">
+                        <Textbox Name="Rol">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!App.Value</Value>
+                                  <Value>=Fields!Rol.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -870,7 +977,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>App</rd:DefaultName>
+                          <rd:DefaultName>Rol</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -886,14 +993,14 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ReporteCodigo">
+                        <Textbox Name="COD_APLICATIVO">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ReporteCodigo.Value</Value>
+                                  <Value>=Fields!COD_APLICATIVO.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -902,7 +1009,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>ReporteCodigo</rd:DefaultName>
+                          <rd:DefaultName>COD_APLICATIVO</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -918,14 +1025,14 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Descripcion">
+                        <Textbox Name="APLICATIVO">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Descripcion.Value</Value>
+                                  <Value>=Fields!APLICATIVO.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -934,7 +1041,71 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Descripcion</rd:DefaultName>
+                          <rd:DefaultName>APLICATIVO</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Funcion">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Funcion.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Funcion</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="DescripcionFunc">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DescripcionFunc.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>DescripcionFunc</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -998,6 +1169,8 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1014,7 +1187,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             <DataSetName>ReportesDataSet</DataSetName>
             <Top>0.27905cm</Top>
             <Height>1.94373cm</Height>
-            <Width>28.0238cm</Width>
+            <Width>28.88338cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1026,7 +1199,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         <Height>0.93066in</Height>
         <Style />
       </Body>
-      <Width>11.06424in</Width>
+      <Width>11.42858in</Width>
       <Page>
         <PageHeader>
           <Height>2.13182cm</Height>
@@ -1040,7 +1213,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>REVISIÓN DE PERMISOS Y AUTORIZACIONES DE SPRING REPORTES</Value>
+                      <Value>REVISIÓN DE PERMISOS Y AUTORIZACIONES DE SÓCRATES -</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1056,7 +1229,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               <Top>0.31433cm</Top>
               <Left>2.4625cm</Left>
               <Height>0.93486cm</Height>
-              <Width>20.61422cm</Width>
+              <Width>16.38089cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1069,9 +1242,8 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             </Textbox>
             <Line Name="Line1">
               <Top>1.99072cm</Top>
-              <Left>0.58208cm</Left>
               <Height>0cm</Height>
-              <Width>27.44172cm</Width>
+              <Width>29.02858cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1094,6 +1266,39 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox12">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!SISTEMA.Value</Value>
+                      <Style>
+                        <FontSize>16pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox12</rd:DefaultName>
+              <Top>0.31433cm</Top>
+              <Left>18.91394cm</Left>
+              <Height>0.93486cm</Height>
+              <Width>2.5cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -1122,7 +1327,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.53344cm</Top>
-              <Left>0.58208cm</Left>
+              <Left>0.26458cm</Left>
               <Height>0.6cm</Height>
               <Width>3.21438cm</Width>
               <Style>
@@ -1151,7 +1356,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
               <Top>0.53344cm</Top>
-              <Left>3.86701cm</Left>
+              <Left>3.54951cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>1</ZIndex>
@@ -1168,7 +1373,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             <Line Name="Line2">
               <Top>0.30868cm</Top>
               <Height>0cm</Height>
-              <Width>28.0238cm</Width>
+              <Width>29.02858cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1194,7 +1399,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.53344cm</Top>
-              <Left>20.94714cm</Left>
+              <Left>22.1765cm</Left>
               <Height>0.6cm</Height>
               <Width>6.70688cm</Width>
               <ZIndex>3</ZIndex>
@@ -1217,8 +1422,8 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         </PageFooter>
         <PageHeight>22.3cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
-        <LeftMargin>0.5cm</LeftMargin>
-        <RightMargin>0.5cm</RightMargin>
+        <LeftMargin>0.3cm</LeftMargin>
+        <RightMargin>0.3cm</RightMargin>
         <TopMargin>1cm</TopMargin>
         <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
@@ -1269,6 +1474,23 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="SISTEMA">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>GradoDataSet</DataSetName>
+          <ValueField>VALOR</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>SISTEMA</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>GradoDataSet</DataSetName>
+          <ValueField>VALOR</ValueField>
+          <LabelField>DES</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1294,6 +1516,11 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>COMPARACION</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>SISTEMA</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

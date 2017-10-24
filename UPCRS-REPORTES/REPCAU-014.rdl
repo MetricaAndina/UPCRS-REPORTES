@@ -429,6 +429,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalles" />
@@ -561,7 +562,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.2259cm</Height>
+          <Height>1.51694cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -574,25 +575,27 @@ WHERE        (FechaRegistro = ?)</CommandText>
                 </Border>
               </Style>
             </Line>
-            <Textbox Name="Textbox19">
+            <Textbox Name="Textbox27">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fecha de Ejecución:</Value>
-                      <Style />
+                      <Value>="TOTAL REGISTROS : " &amp; CountRows("ReportesDataSet")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.19403cm</Top>
-              <Left>0.14111cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.21438cm</Width>
+              <Top>0.17639cm</Top>
+              <Left>0.1905cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>5.35479cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -604,25 +607,29 @@ WHERE        (FechaRegistro = ?)</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox14">
+            <Textbox Name="Textbox20">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
-                      <Style />
+                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Parameters!FECHA_REGISTRO.Value, "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.19403cm</Top>
-              <Left>3.42604cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <Left>14.73187cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>8.27769cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -634,15 +641,17 @@ WHERE        (FechaRegistro = ?)</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox18">
+            <Textbox Name="Textbox21">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
-                      <Style />
+                      <Value>="N° PÁGINA: " &amp;Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -651,10 +660,10 @@ WHERE        (FechaRegistro = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.19403cm</Top>
-              <Left>17.70498cm</Left>
-              <Height>0.6cm</Height>
-              <Width>5.30459cm</Width>
+              <Top>0.72348cm</Top>
+              <Left>16.38206cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>6.6275cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -692,7 +701,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
           <Value>=Today()</Value>
         </Values>
       </DefaultValue>
-      <Prompt>FECHA_REGISTRO</Prompt>
+      <Prompt>CONTROL ACTUAL</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>

@@ -64,7 +64,10 @@ WHERE FechaRegistro=?
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.39922cm</Width>
+                  <Width>1.09771cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>6.97589cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.63229cm</Width>
@@ -76,13 +79,47 @@ WHERE FechaRegistro=?
                   <Width>3.21438cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>9.37917cm</Width>
+                  <Width>8.28146cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
                   <Height>1.02333cm</Height>
                   <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>N°</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox14">
@@ -264,6 +301,39 @@ WHERE FechaRegistro=?
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=RowNumber(Nothing)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2, "WhiteSmoke","White")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Nombre">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -440,12 +510,14 @@ WHERE FechaRegistro=?
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalles" />
@@ -456,7 +528,7 @@ WHERE FechaRegistro=?
             <Top>0.63183cm</Top>
             <Left>0.04974cm</Left>
             <Height>1.62333cm</Height>
-            <Width>25.27027cm</Width>
+            <Width>24.84694cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -464,10 +536,10 @@ WHERE FechaRegistro=?
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.9375in</Height>
+        <Height>1.0625in</Height>
         <Style />
       </Body>
-      <Width>10.42151in</Width>
+      <Width>10.14583in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -481,7 +553,7 @@ WHERE FechaRegistro=?
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CONTROL MENSUAL DE CUENTAS</Value>
+                      <Value>= "CONTROL MENSUAL DE CUENTAS"</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -489,15 +561,15 @@ WHERE FechaRegistro=?
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Center</TextAlign>
+                    <TextAlign>Left</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.89641cm</Top>
-              <Left>5.36787cm</Left>
+              <Top>0.38471cm</Top>
+              <Left>2.96016cm</Left>
               <Height>0.84102cm</Height>
-              <Width>11.14213cm</Width>
+              <Width>18.81505cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -543,29 +615,31 @@ WHERE FechaRegistro=?
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.69333cm</Height>
+          <Height>1.61395cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox2">
+            <Textbox Name="Textbox27">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
-                      <Style />
+                      <Value>="TOTAL REGISTROS : " &amp; CountRows("DS_Cuenta")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.63183cm</Top>
-              <Left>17.27412cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.21167cm</Top>
+              <Left>0.04974cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>5.35479cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -576,6 +650,85 @@ WHERE FechaRegistro=?
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Textbox Name="Textbox19">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Today(), "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.24694cm</Top>
+              <Left>17.04232cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>8.27769cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox18">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="N° PÁGINA: " &amp;Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.77639cm</Top>
+              <Left>18.69251cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>6.6275cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line2">
+              <Top>0.07056cm</Top>
+              <Height>0cm</Height>
+              <Width>25.72068cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
           </ReportItems>
           <Style>
             <Border>
@@ -597,15 +750,15 @@ WHERE FechaRegistro=?
   <ReportParameters>
     <ReportParameter Name="FECHA_INI">
       <DataType>DateTime</DataType>
-      <Prompt>FECHA_INI</Prompt>
+      <Prompt>INICIO</Prompt>
     </ReportParameter>
     <ReportParameter Name="FECHA_FIN">
       <DataType>DateTime</DataType>
-      <Prompt>FECHA_FIN</Prompt>
+      <Prompt>FIN</Prompt>
     </ReportParameter>
     <ReportParameter Name="FECHA_REG">
       <DataType>DateTime</DataType>
-      <Prompt>FECHA_REG</Prompt>
+      <Prompt>CONTROL ACTUAL</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
@@ -624,8 +777,8 @@ WHERE FechaRegistro=?
           <ParameterName>FECHA_FIN</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>FECHA_REG</ParameterName>
         </CellDefinition>
       </CellDefinitions>

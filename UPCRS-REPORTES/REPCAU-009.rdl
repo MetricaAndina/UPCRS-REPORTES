@@ -1557,7 +1557,7 @@
   <ReportParameters>
     <ReportParameter Name="Fec_Reg">
       <DataType>DateTime</DataType>
-      <Prompt>Fec_Reg</Prompt>
+      <Prompt>CONTROL ACTUAL</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>

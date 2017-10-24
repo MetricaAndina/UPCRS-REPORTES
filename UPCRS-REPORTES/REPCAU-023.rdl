@@ -167,6 +167,24 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="NombreCompletoDataSet">
+      <Query>
+        <DataSourceName>ReportesDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="?">
+            <Value>=Parameters!CONTROL_OWNER.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select NombreCompleto(?) as NombreCompleto
+from VISTA_OFISMART_DI2D</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -1177,6 +1195,7 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalles" />
@@ -1185,7 +1204,8 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
             </TablixRowHierarchy>
             <FixedRowHeaders>true</FixedRowHeaders>
             <DataSetName>ReportesDataSet</DataSetName>
-            <Top>0.27905cm</Top>
+            <Top>0.42015cm</Top>
+            <Left>0.01273cm</Left>
             <Height>1.94373cm</Height>
             <Width>28.88338cm</Width>
             <Style>
@@ -1202,7 +1222,7 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
       <Width>11.42858in</Width>
       <Page>
         <PageHeader>
-          <Height>2.13182cm</Height>
+          <Height>2.89911cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1213,9 +1233,9 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>REVISIÓN DE PERMISOS Y AUTORIZACIONES DE SÓCRATES -</Value>
+                      <Value>REVISIÓN DE PERMISOS Y AUTORIZACIONES DE SÓCRATES</Value>
                       <Style>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1226,9 +1246,9 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.31433cm</Top>
-              <Left>2.4625cm</Left>
-              <Height>0.93486cm</Height>
+              <Top>0.33496cm</Top>
+              <Left>1.92843cm</Left>
+              <Height>0.69674cm</Height>
               <Width>16.38089cm</Width>
               <Style>
                 <Border>
@@ -1241,7 +1261,8 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>1.99072cm</Top>
+              <Top>2.64648cm</Top>
+              <Left>0.00001cm</Left>
               <Height>0cm</Height>
               <Width>29.02858cm</Width>
               <ZIndex>1</ZIndex>
@@ -1256,7 +1277,7 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
               <Value>logoupc60x60</Value>
               <Sizing>FitProportional</Sizing>
               <Top>0.31433cm</Top>
-              <Left>0.58208cm</Left>
+              <Left>0.2cm</Left>
               <Height>1.5cm</Height>
               <Width>1.5cm</Width>
               <ZIndex>2</ZIndex>
@@ -1266,7 +1287,318 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox7">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>DUEÑO DEL PROCESO :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.12288cm</Top>
+              <Left>8.86535cm</Left>
+              <Height>0.5cm</Height>
+              <Width>3.46922cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox11">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!NombreCompleto.Value, "NombreCompletoDataSet")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.12288cm</Top>
+              <Left>12.36985cm</Left>
+              <Height>0.5cm</Height>
+              <Width>7.80369cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox13">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>FECHA CIERRE COMPARACIÓN :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.79926cm</Top>
+              <Left>1.91752cm</Left>
+              <Height>0.5cm</Height>
+              <Width>4.73922cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox16">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Format(Parameters!FECHA_REPORTE_ANTERIOR.Value, "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.79926cm</Top>
+              <Left>6.7273cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.0675cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox20">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>FECHA CIERRE REPORTE :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.79926cm</Top>
+              <Left>8.86535cm</Left>
+              <Height>0.5cm</Height>
+              <Width>3.74729cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox21">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Format(Parameters!FECHA_REPORTE.Value, "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.79926cm</Top>
+              <Left>12.6832cm</Left>
+              <Height>0.5cm</Height>
+              <Width>1.77631cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>COMPARACIÓN :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.79926cm</Top>
+              <Left>14.53007cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.67226cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox26">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!COMPARACION.Value</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.79926cm</Top>
+              <Left>17.2376cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.99922cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
             <Textbox Name="Textbox12">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>SISTEMA :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.1435cm</Top>
+              <Left>1.91752cm</Left>
+              <Height>0.5cm</Height>
+              <Width>1.6246cm</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox28">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1275,24 +1607,26 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
                     <TextRun>
                       <Value>=Parameters!SISTEMA.Value</Value>
                       <Style>
-                        <FontSize>16pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox12</rd:DefaultName>
-              <Top>0.31433cm</Top>
-              <Left>18.91394cm</Left>
-              <Height>0.93486cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>3</ZIndex>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.12288cm</Top>
+              <Left>3.71851cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.61638cm</Width>
+              <ZIndex>12</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -1307,10 +1641,20 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.4552cm</Height>
+          <Height>3.12207cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
+            <Line Name="Line2">
+              <Top>0.30868cm</Top>
+              <Height>0cm</Height>
+              <Width>29.02858cm</Width>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
             <Textbox Name="Textbox19">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1318,47 +1662,22 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fecha de Ejecución:</Value>
-                      <Style />
+                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Today(), "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.53344cm</Top>
-              <Left>0.26458cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.21438cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox15">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Format(Today(), "dd/MM/yyyy")</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.53344cm</Top>
-              <Left>3.54951cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <Top>0.44979cm</Top>
+              <Left>20.60569cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>8.27769cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1370,17 +1689,6 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line2">
-              <Top>0.30868cm</Top>
-              <Height>0cm</Height>
-              <Width>29.02858cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
             <Textbox Name="Textbox18">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1388,8 +1696,10 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
-                      <Style />
+                      <Value>="N° PÁGINA: " &amp;Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -1398,11 +1708,139 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.53344cm</Top>
-              <Left>22.1765cm</Left>
-              <Height>0.6cm</Height>
-              <Width>6.70688cm</Width>
+              <Top>1.04979cm</Top>
+              <Left>22.25588cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>6.6275cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox29">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="NUEVOS : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Nuevo", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.44979cm</Top>
+              <Left>0.04582cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>4.41722cm</Width>
               <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox30">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="EXISTENTE : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Existente", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>1.04979cm</Top>
+              <Left>0.01273cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>4.4503cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox31">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="ELIMINADO : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Eliminado", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>1.61451cm</Top>
+              <Left>0.04582cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>4.41722cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox32">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="TOTAL REGISTROS : " &amp; CountRows("ReportesDataSet")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>2.21452cm</Top>
+              <Left>0.04582cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>5.35479cm</Width>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1432,48 +1870,6 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="CONTROL_OWNER">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>ControlOwnerDataSet</DataSetName>
-          <ValueField>ad_username</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>CONTROL_OWNER</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>ControlOwnerDataSet</DataSetName>
-          <ValueField>ad_username</ValueField>
-          <LabelField>ad_userSig</LabelField>
-        </DataSetReference>
-      </ValidValues>
-    </ReportParameter>
-    <ReportParameter Name="FECHA_REPORTE_ANTERIOR">
-      <DataType>DateTime</DataType>
-      <Prompt>FECHA_REPORTE_ANTERIOR</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="FECHA_REPORTE">
-      <DataType>DateTime</DataType>
-      <Prompt>FECHA_REPORTE</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="COMPARACION">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <DataSetReference>
-          <DataSetName>ComparacionDataSet</DataSetName>
-          <ValueField>valor</ValueField>
-        </DataSetReference>
-      </DefaultValue>
-      <Prompt>COMPARACION</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>ComparacionDataSet</DataSetName>
-          <ValueField>valor</ValueField>
-          <LabelField>des</LabelField>
-        </DataSetReference>
-      </ValidValues>
-    </ReportParameter>
     <ReportParameter Name="SISTEMA">
       <DataType>String</DataType>
       <DefaultValue>
@@ -1491,6 +1887,48 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="CONTROL_OWNER">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>ControlOwnerDataSet</DataSetName>
+          <ValueField>ad_username</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>DUEÑO DEL PROCESO</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ControlOwnerDataSet</DataSetName>
+          <ValueField>ad_username</ValueField>
+          <LabelField>ad_userSig</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="FECHA_REPORTE_ANTERIOR">
+      <DataType>DateTime</DataType>
+      <Prompt>FECHA CIERRE COMPARACIÓN</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FECHA_REPORTE">
+      <DataType>DateTime</DataType>
+      <Prompt>FECHA CIERRE REPORTE</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="COMPARACION">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>ComparacionDataSet</DataSetName>
+          <ValueField>valor</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>COMPARACIÓN</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ComparacionDataSet</DataSetName>
+          <ValueField>valor</ValueField>
+          <LabelField>des</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1498,28 +1936,28 @@ SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>CONTROL_OWNER</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>FECHA_REPORTE_ANTERIOR</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>FECHA_REPORTE</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>COMPARACION</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
+          <RowIndex>0</RowIndex>
           <ParameterName>SISTEMA</ParameterName>
         </CellDefinition>
       </CellDefinitions>

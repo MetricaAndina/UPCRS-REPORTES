@@ -394,6 +394,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalles" />
@@ -402,7 +403,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
             </TablixRowHierarchy>
             <DataSetName>ReportesDataSet</DataSetName>
             <Top>0.54204cm</Top>
-            <Left>0.17639cm</Left>
+            <Left>0.77688cm</Left>
             <Height>1.2cm</Height>
             <Width>19.04118cm</Width>
             <Style>
@@ -415,7 +416,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
         <Height>0.88541in</Height>
         <Style />
       </Body>
-      <Width>9.89236in</Width>
+      <Width>9.85447in</Width>
       <Page>
         <PageHeader>
           <Height>2.68745cm</Height>
@@ -425,7 +426,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
             <Line Name="Line1">
               <Top>2.48391cm</Top>
               <Height>0cm</Height>
-              <Width>25.12659cm</Width>
+              <Width>25.03035cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -452,7 +453,8 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Left>2.08208cm</Left>
+              <Top>0.04974cm</Top>
+              <Left>2.2071cm</Left>
               <Height>0.80574cm</Height>
               <Width>17.13549cm</Width>
               <ZIndex>1</ZIndex>
@@ -486,8 +488,8 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.94685cm</Top>
-              <Left>2.08208cm</Left>
+              <Top>0.99659cm</Top>
+              <Left>2.2071cm</Left>
               <Height>1.41676cm</Height>
               <Width>22.14493cm</Width>
               <ZIndex>2</ZIndex>
@@ -505,8 +507,8 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
               <Source>Embedded</Source>
               <Value>logoupc60x60</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.28787cm</Top>
-              <Left>0.17639cm</Left>
+              <Top>0.33761cm</Top>
+              <Left>0.30141cm</Left>
               <Height>1.5cm</Height>
               <Width>1.5cm</Width>
               <ZIndex>3</ZIndex>
@@ -524,28 +526,30 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.98778cm</Height>
+          <Height>1.46514cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Line Name="Line2">
               <Height>0cm</Height>
-              <Width>25.12659cm</Width>
+              <Width>25.03035cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
                 </Border>
               </Style>
             </Line>
-            <Textbox Name="Textbox19">
+            <Textbox Name="Textbox27">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fecha de Ejecución:</Value>
-                      <Style />
+                      <Value>="TOTAL REGISTROS : " &amp; CountRows("ReportesDataSet")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -553,9 +557,9 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.18521cm</Top>
-              <Left>0.17639cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.21438cm</Width>
+              <Left>0.30141cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>5.35479cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -567,25 +571,29 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox14">
+            <Textbox Name="Textbox20">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
-                      <Style />
+                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Parameters!FECHA_REGISTRO.Value, "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.18521cm</Top>
-              <Left>3.46132cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.14111cm</Top>
+              <Left>16.07434cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>8.27769cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -597,15 +605,17 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox18">
+            <Textbox Name="Textbox21">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
-                      <Style />
+                      <Value>="N° PÁGINA: " &amp;Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -614,10 +624,10 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.18521cm</Top>
-              <Left>19.87492cm</Left>
-              <Height>0.6cm</Height>
-              <Width>4.35208cm</Width>
+              <Top>0.67056cm</Top>
+              <Left>17.72453cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>6.6275cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -655,7 +665,7 @@ WHERE        (DATE_FORMAT(FechaRegistro, '%d/%m/%Y') = ?)</CommandText>
           <Value>=Today()</Value>
         </Values>
       </DefaultValue>
-      <Prompt>FECHA_REGISTRO</Prompt>
+      <Prompt>CONTROL ACTUAL</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>

@@ -59,6 +59,10 @@
           <DataField>OU</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="NombreJefe">
+          <DataField>NombreJefe</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Comparacion">
           <DataField>Comparacion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -103,27 +107,33 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                   <Width>0.97613cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.01433cm</Width>
+                  <Width>1.69141cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>5.67834cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.50542cm</Width>
+                  <Width>3.91366cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.69257cm</Width>
+                  <Width>2.44709cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.68185cm</Width>
+                  <Width>2.34319cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.00271cm</Width>
+                  <Width>2.36435cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.67979cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.57938cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>1.13206cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -229,6 +239,40 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>NOMBRE JEFE</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Textbox4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -315,6 +359,40 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox16">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>DIAS LOGON</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox16</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -468,6 +546,38 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="NombreJefe">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!NombreJefe.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>NombreJefe</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="FechaRegistro">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -564,6 +674,38 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="diasLogon">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!diasLogon.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>diasLogon</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Comparacion">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -607,12 +749,15 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalles" />
@@ -621,9 +766,8 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             </TablixRowHierarchy>
             <DataSetName>ReportesDataSet</DataSetName>
             <Top>0.28787cm</Top>
-            <Left>0.3947cm</Left>
-            <Height>1.2cm</Height>
-            <Width>22.55135cm</Width>
+            <Height>1.73206cm</Height>
+            <Width>23.67334cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -634,7 +778,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         <Height>0.79525in</Height>
         <Style />
       </Body>
-      <Width>9.54008in</Width>
+      <Width>9.43988in</Width>
       <Page>
         <PageHeader>
           <Height>1.99954cm</Height>
@@ -676,7 +820,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             <Line Name="Line1">
               <Top>1.77023cm</Top>
               <Height>0cm</Height>
-              <Width>24.2318cm</Width>
+              <Width>23.95084cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -773,31 +917,42 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.49931cm</Height>
+          <Height>2.55764cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox18">
+            <Line Name="Line2">
+              <Top>0.14965cm</Top>
+              <Height>0cm</Height>
+              <Width>23.95084cm</Width>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox23">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
-                      <Style />
+                      <Value>="NUEVOS : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Nuevo", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
+                  <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.32604cm</Top>
-              <Left>18.14417cm</Left>
-              <Height>0.6cm</Height>
-              <Width>4.80188cm</Width>
+              <Top>0.29075cm</Top>
+              <Left>0.03309cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>4.41722cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -808,17 +963,169 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line2">
-              <Top>0.14965cm</Top>
-              <Height>0cm</Height>
-              <Width>24.2318cm</Width>
-              <ZIndex>1</ZIndex>
+            <Textbox Name="Textbox25">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="EXISTENTE : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Existente", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.85548cm</Top>
+              <Height>0.49417cm</Height>
+              <Width>4.4503cm</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
-                  <Style>Solid</Style>
+                  <Style>None</Style>
                 </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
               </Style>
-            </Line>
+            </Textbox>
+            <Textbox Name="Textbox26">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="ELIMINADO : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Eliminado", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>1.38493cm</Top>
+              <Left>0.03309cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>4.41722cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox27">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="TOTAL REGISTROS : " &amp; CountRows("ReportesDataSet")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>1.91437cm</Top>
+              <Left>0.03309cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>5.35479cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox19">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Today(), "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.29075cm</Top>
+              <Left>15.39565cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>8.27769cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox18">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="N° PÁGINA: " &amp;Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.8202cm</Top>
+              <Left>17.04982cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>6.6275cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -826,7 +1133,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>21cm</PageHeight>
+        <PageHeight>22.3cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
@@ -840,11 +1147,11 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
   <ReportParameters>
     <ReportParameter Name="FECHA_ANTERIOR_REGISTRO">
       <DataType>DateTime</DataType>
-      <Prompt>FECHA_ANTERIOR_REGISTRO</Prompt>
+      <Prompt>CONTROL ANTERIOR</Prompt>
     </ReportParameter>
     <ReportParameter Name="FECHA_REGISTRO">
       <DataType>DateTime</DataType>
-      <Prompt>FECHA_REGISTRO</Prompt>
+      <Prompt>CONTROL ACTUAL</Prompt>
     </ReportParameter>
     <ReportParameter Name="COMPARACIÓN">
       <DataType>String</DataType>

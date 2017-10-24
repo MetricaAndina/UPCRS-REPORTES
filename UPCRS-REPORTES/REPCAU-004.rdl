@@ -421,6 +421,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                     <TablixMember />
                   </TablixMembers>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="CARPETA">
@@ -475,7 +476,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             </TablixRowHierarchy>
             <DataSetName>ReportesDataSet</DataSetName>
             <Top>0.35685cm</Top>
-            <Left>0.45109cm</Left>
+            <Left>0.2cm</Left>
             <Height>1.2cm</Height>
             <Width>23.77989cm</Width>
             <Style>
@@ -486,7 +487,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
           </Tablix>
           <Line Name="Line1">
             <Height>0cm</Height>
-            <Width>24.57493cm</Width>
+            <Width>24.42731cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -495,13 +496,13 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
             </Style>
           </Line>
         </ReportItems>
-        <Height>0.86458in</Height>
+        <Height>0.73958in</Height>
         <Style />
       </Body>
-      <Width>9.67517in</Width>
+      <Width>9.61705in</Width>
       <Page>
         <PageHeader>
-          <Height>1.97308cm</Height>
+          <Height>1.84079cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -512,7 +513,7 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Relación de Carpetas Compartidas de Servidores de</Value>
+                      <Value>="Relación de Carpetas Compartidas de Servidores de " &amp; Parameters!AREA.Value &amp; " al " &amp; Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -526,122 +527,14 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.17638cm</Top>
-              <Left>1.84936cm</Left>
+              <Left>1.87639cm</Left>
               <Height>0.84102cm</Height>
-              <Width>13.86347cm</Width>
+              <Width>22.11765cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
                 <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox3">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Parameters!AREA.Value</Value>
-                      <Style>
-                        <FontSize>16pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.17638cm</Top>
-              <Left>15.78339cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>2.5834cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox6">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>al  </Value>
-                      <Style>
-                        <FontSize>16pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.17638cm</Top>
-              <Left>18.47262cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>0.70077cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox7">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
-                      <Style>
-                        <FontSize>16pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.17638cm</Top>
-              <Left>19.27922cm</Left>
-              <Height>0.84102cm</Height>
-              <Width>4.77536cm</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <VerticalAlign>Top</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -653,10 +546,10 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
               <Value>logoupc60x60</Value>
               <Sizing>FitProportional</Sizing>
               <Top>0.17638cm</Top>
-              <Left>0.21486cm</Left>
+              <Left>0.2cm</Left>
               <Height>1.5cm</Height>
               <Width>1.5cm</Width>
-              <ZIndex>4</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -671,31 +564,42 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.19972cm</Height>
+          <Height>1.62305cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox18">
+            <Line Name="Line2">
+              <Top>0.17639cm</Top>
+              <Height>0cm</Height>
+              <Width>24.42731cm</Width>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox27">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
-                      <Style />
+                      <Value>="TOTAL REGISTROS : " &amp; CountRows("ReportesDataSet")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
+                  <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.35278cm</Top>
-              <Left>18.84701cm</Left>
-              <Height>0.6cm</Height>
-              <Width>5.38396cm</Width>
+              <Top>0.38806cm</Top>
+              <Left>0.34767cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>5.35479cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -706,17 +610,74 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line2">
-              <Top>0.17639cm</Top>
-              <Height>0cm</Height>
-              <Width>24.57493cm</Width>
-              <ZIndex>1</ZIndex>
+            <Textbox Name="Textbox21">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Today(), "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.35278cm</Top>
+              <Left>15.71635cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>8.27769cm</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
-                  <Style>Solid</Style>
+                  <Style>None</Style>
                 </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
               </Style>
-            </Line>
+            </Textbox>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="N° PÁGINA: " &amp;Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.9175cm</Top>
+              <Left>17.36654cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>6.6275cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -743,10 +704,16 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
           <Value>=Today()</Value>
         </Values>
       </DefaultValue>
-      <Prompt>FECHA_REGISTRO</Prompt>
+      <Prompt>CONTROL ACTUAL</Prompt>
     </ReportParameter>
     <ReportParameter Name="AREA">
       <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>AreaDataSet</DataSetName>
+          <ValueField>Area</ValueField>
+        </DataSetReference>
+      </DefaultValue>
       <Prompt>AREA</Prompt>
       <ValidValues>
         <DataSetReference>
@@ -763,13 +730,13 @@ FROM            VISTA_CARPETAS_SERVER</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>FECHA_REGISTRO</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
           <ParameterName>AREA</ParameterName>
         </CellDefinition>
       </CellDefinitions>

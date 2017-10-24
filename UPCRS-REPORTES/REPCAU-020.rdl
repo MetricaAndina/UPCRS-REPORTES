@@ -118,6 +118,24 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="NombreCompletoDataSet">
+      <Query>
+        <DataSourceName>ReportesDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="?">
+            <Value>=Parameters!CONTROL_OWNER.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select NombreCompleto(?) as NombreCompleto
+from VISTA_OFISMART_DI2D</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -708,6 +726,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalles" />
@@ -716,7 +735,8 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             </TablixRowHierarchy>
             <FixedRowHeaders>true</FixedRowHeaders>
             <DataSetName>ReportesDataSet</DataSetName>
-            <Top>0.42016cm</Top>
+            <Top>0.31433cm</Top>
+            <Left>0.02646cm</Left>
             <Height>1.27938cm</Height>
             <Width>24.95654cm</Width>
             <Style>
@@ -727,13 +747,13 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.89247in</Height>
+        <Height>0.7883in</Height>
         <Style />
       </Body>
       <Width>10.08508in</Width>
       <Page>
         <PageHeader>
-          <Height>2.13182cm</Height>
+          <Height>2.58161cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -746,7 +766,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                     <TextRun>
                       <Value>REVISION DE PERMISOS Y AUTORIZACIONES INTERFAZ PEOPLESOFT</Value>
                       <Style>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -758,8 +778,8 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.31433cm</Top>
-              <Left>2.145cm</Left>
-              <Height>0.93486cm</Height>
+              <Left>1.94097cm</Left>
+              <Height>0.74965cm</Height>
               <Width>20.61422cm</Width>
               <Style>
                 <Border>
@@ -772,7 +792,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>1.99072cm</Top>
+              <Top>2.42599cm</Top>
               <Height>0cm</Height>
               <Width>25.58964cm</Width>
               <ZIndex>1</ZIndex>
@@ -797,37 +817,65 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 </Border>
               </Style>
             </Image>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageHeader>
-        <PageFooter>
-          <Height>1.4552cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox19">
+            <Textbox Name="Textbox4">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fecha de Ejecución:</Value>
-                      <Style />
+                      <Value>DUEÑO DEL PROCESO :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.53344cm</Top>
-              <Left>0.26458cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.21438cm</Width>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.16982cm</Top>
+              <Left>1.94097cm</Left>
+              <Height>0.5cm</Height>
+              <Width>3.46922cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox7">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!NombreCompleto.Value, "NombreCompletoDataSet")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.16982cm</Top>
+              <Left>5.44547cm</Left>
+              <Height>0.5cm</Height>
+              <Width>7.80369cm</Width>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -838,25 +886,257 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox15">
+            <Textbox Name="Textbox11">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Today(), "dd/MM/yyyy")</Value>
-                      <Style />
+                      <Value>FECHA CIERRE COMPARACIÓN :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.74961cm</Top>
+              <Left>1.94097cm</Left>
+              <Height>0.5cm</Height>
+              <Width>4.73922cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox13">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Format(Parameters!FECHA_REPORTE_ANTERIOR.Value, "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.74961cm</Top>
+              <Left>6.75075cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.0675cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox17">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>FECHA CIERRE REPORTE :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.74961cm</Top>
+              <Left>8.8888cm</Left>
+              <Height>0.5cm</Height>
+              <Width>3.74729cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox20">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Format(Parameters!FECHA_REPORTE.Value, "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.74961cm</Top>
+              <Left>12.70665cm</Left>
+              <Height>0.5cm</Height>
+              <Width>1.77631cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox21">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>COMPARACIÓN :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.74961cm</Top>
+              <Left>14.55352cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.67226cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox22">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!COMPARACION.Value</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.74961cm</Top>
+              <Left>17.26105cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.99922cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>2.75166cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Line Name="Line2">
+              <Top>0.30868cm</Top>
+              <Left>0.02646cm</Left>
+              <Height>0cm</Height>
+              <Width>25.56318cm</Width>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="NUEVOS : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Nuevo", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.53344cm</Top>
-              <Left>3.54951cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.37924cm</Top>
+              <Left>0.05955cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>4.41722cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -868,27 +1148,113 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line2">
-              <Top>0.30868cm</Top>
-              <Left>0.02646cm</Left>
-              <Height>0cm</Height>
-              <Width>25.56318cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
-            <Textbox Name="Textbox18">
+            <Textbox Name="Textbox25">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="N° Página: " &amp;Globals!PageNumber</Value>
-                      <Style />
+                      <Value>="EXISTENTE : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Existente", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.97924cm</Top>
+              <Left>0.02646cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>4.4503cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox26">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="ELIMINADO : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Eliminado", 1, 0), "ReportesDataSet"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>1.54396cm</Top>
+              <Left>0.05955cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>4.41722cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox27">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="TOTAL REGISTROS : " &amp; CountRows("ReportesDataSet")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>2.14397cm</Top>
+              <Left>0.05955cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>5.35479cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox19">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Today(), "dd/MM/yyyy")</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -897,11 +1263,45 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.53344cm</Top>
-              <Left>18.24966cm</Left>
-              <Height>0.6cm</Height>
-              <Width>6.70688cm</Width>
-              <ZIndex>3</ZIndex>
+              <Top>0.37924cm</Top>
+              <Left>16.70531cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>8.27769cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox18">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="N° PÁGINA: " &amp;Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Top>0.97924cm</Top>
+              <Left>18.3555cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>6.6275cm</Width>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -939,7 +1339,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
           <ValueField>ad_username</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>CONTROL_OWNER</Prompt>
+      <Prompt>DUEÑO DEL PROCESO</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>ControlOwnerDataSet</DataSetName>
@@ -950,11 +1350,11 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
     </ReportParameter>
     <ReportParameter Name="FECHA_REPORTE_ANTERIOR">
       <DataType>DateTime</DataType>
-      <Prompt>FECHA_REPORTE_ANTERIOR</Prompt>
+      <Prompt>FECHA CIERRE COMPARACIÓN</Prompt>
     </ReportParameter>
     <ReportParameter Name="FECHA_REPORTE">
       <DataType>DateTime</DataType>
-      <Prompt>FECHA_REPORTE</Prompt>
+      <Prompt>FECHA CIERRE REPORTE</Prompt>
     </ReportParameter>
     <ReportParameter Name="COMPARACION">
       <DataType>String</DataType>
@@ -964,7 +1364,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
           <ValueField>valor</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>COMPARACION</Prompt>
+      <Prompt>COMPARACIÓN</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>ComparacionDataSet</DataSetName>
@@ -985,18 +1385,18 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
           <ParameterName>CONTROL_OWNER</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>FECHA_REPORTE_ANTERIOR</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>FECHA_REPORTE</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>COMPARACION</ParameterName>
         </CellDefinition>
       </CellDefinitions>

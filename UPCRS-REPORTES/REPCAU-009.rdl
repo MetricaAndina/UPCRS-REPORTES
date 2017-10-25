@@ -79,9 +79,28 @@
         <QueryParameters>
           <QueryParameter Name="?">
             <Value>=Parameters!Fec_Reg.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!Fec_Reg.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!Fec_Reg.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT  LOGIN,  DATE_FORMAT(FechaCese ,"%d/%m/%Y") FechaCese FROM VISTA_Risk007Ceses_AD WHERE FechaRegistro=?</CommandText>
+        <CommandText>SELECT        LOGIN, DATE_FORMAT(FechaCese ,"%d/%m/%Y") FechaCese
+FROM            VISTA_Risk007Ceses_AD_Pla
+WHERE        FechaRegistro = ?
+UNION ALL
+SELECT        LOGIN, DATE_FORMAT(FechaCese ,"%d/%m/%Y") FechaCese
+FROM            VISTA_Risk007Ceses_AD_Gen
+WHERE        FechaRegistro = ?
+UNION ALL
+SELECT        LOGIN, DATE_FORMAT(FechaCese ,"%d/%m/%Y") FechaCese
+FROM            VISTA_Risk007Ceses_AD_Out
+WHERE        FechaRegistro = ?</CommandText>
       </Query>
       <Fields>
         <Field Name="LOGIN">
@@ -687,7 +706,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Lista de Retiros Activos en Interfaz PeopleSoft (Eliminar) </Value>
+                    <Value>Lista de Retiros Activos en Interfaz PeopleSoft (Inactivar) </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>Underline</TextDecoration>

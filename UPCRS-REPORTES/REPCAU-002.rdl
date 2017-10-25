@@ -55,6 +55,25 @@ WHERE FechaRegistro=?
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="MesFechaDataSet">
+      <Query>
+        <DataSourceName>DS_CuentasCompartidas</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_INI.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT ELT(DATE_FORMAT(?,'%m'),'ENERO','FEBRERO','MARZO','ABRIL','MAYO','JUNIO','JULIO','AGOSTO','SETIEMBRE','OCTUBRE','NOVIEMBRE','DICIEMBRE') AS MES
+FROM VISTA_AD ;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="MES">
+          <DataField>MES</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -525,8 +544,8 @@ WHERE FechaRegistro=?
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DS_Cuenta</DataSetName>
-            <Top>0.63183cm</Top>
-            <Left>0.04974cm</Left>
+            <Top>0.14111cm</Top>
+            <Left>0.42016cm</Left>
             <Height>1.62333cm</Height>
             <Width>24.84694cm</Width>
             <Style>
@@ -536,13 +555,13 @@ WHERE FechaRegistro=?
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.0625in</Height>
+        <Height>0.86458in</Height>
         <Style />
       </Body>
       <Width>10.14583in</Width>
       <Page>
         <PageHeader>
-          <Height>2.54cm</Height>
+          <Height>2.03729cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -553,7 +572,7 @@ WHERE FechaRegistro=?
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>= "CONTROL MENSUAL DE CUENTAS"</Value>
+                      <Value>= "CONTROL MENSUAL DE CUENTAS DEL MES DE " &amp; First(Fields!MES.Value, "MesFechaDataSet")</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -566,8 +585,8 @@ WHERE FechaRegistro=?
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.38471cm</Top>
-              <Left>2.96016cm</Left>
+              <Top>0.3cm</Top>
+              <Left>2.12618cm</Left>
               <Height>0.84102cm</Height>
               <Width>18.81505cm</Width>
               <Style>
@@ -581,8 +600,7 @@ WHERE FechaRegistro=?
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>2.48391cm</Top>
-              <Left>0.04974cm</Left>
+              <Top>1.85009cm</Top>
               <Height>0cm</Height>
               <Width>25.72068cm</Width>
               <ZIndex>1</ZIndex>
@@ -596,10 +614,10 @@ WHERE FechaRegistro=?
               <Source>Embedded</Source>
               <Value>logoupc60x60</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.38471cm</Top>
-              <Left>0.04974cm</Left>
-              <Height>1.77058cm</Height>
-              <Width>2.45568cm</Width>
+              <Top>0.3cm</Top>
+              <Left>0.42016cm</Left>
+              <Height>1.37371cm</Height>
+              <Width>1.56492cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -670,7 +688,7 @@ WHERE FechaRegistro=?
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.24694cm</Top>
-              <Left>17.04232cm</Left>
+              <Left>16.61899cm</Left>
               <Height>0.49417cm</Height>
               <Width>8.27769cm</Width>
               <ZIndex>1</ZIndex>
@@ -704,7 +722,7 @@ WHERE FechaRegistro=?
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.77639cm</Top>
-              <Left>18.69251cm</Left>
+              <Left>18.26918cm</Left>
               <Height>0.49417cm</Height>
               <Width>6.6275cm</Width>
               <ZIndex>2</ZIndex>

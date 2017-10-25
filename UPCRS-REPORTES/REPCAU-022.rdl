@@ -161,22 +161,25 @@ from VISTA_OFISMART_DI2D</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
+                  <Width>0.87255cm</Width>
+                </TablixColumn>
+                <TablixColumn>
                   <Width>1.8208cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.05123cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.64284cm</Width>
+                  <Width>2.41303cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.18493cm</Width>
+                  <Width>2.82801cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.75505cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.55292cm</Width>
+                  <Width>1.77771cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.41521cm</Width>
@@ -185,7 +188,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                   <Width>2.65875cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.10352cm</Width>
+                  <Width>2.13327cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.865cm</Width>
@@ -199,8 +202,42 @@ from VISTA_OFISMART_DI2D</CommandText>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.97331cm</Height>
+                  <Height>1.06149cm</Height>
                   <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>N°</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox2">
@@ -550,7 +587,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>DESCRIPCIÓN </Value>
+                                  <Value>DESCRIPCIÓN  REPORTE</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -614,6 +651,38 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <TablixRow>
                   <Height>0.6cm</Height>
                   <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=RowNumber(Nothing)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Usuario">
@@ -1016,6 +1085,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1032,8 +1102,8 @@ from VISTA_OFISMART_DI2D</CommandText>
             <FixedRowHeaders>true</FixedRowHeaders>
             <DataSetName>ReportesDataSet</DataSetName>
             <Top>0.27905cm</Top>
-            <Height>1.57331cm</Height>
-            <Width>28.02379cm</Width>
+            <Height>1.66149cm</Height>
+            <Width>27.56415cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1045,10 +1115,10 @@ from VISTA_OFISMART_DI2D</CommandText>
         <Height>0.93066in</Height>
         <Style />
       </Body>
-      <Width>11.06424in</Width>
+      <Width>10.91307in</Width>
       <Page>
         <PageHeader>
-          <Height>2.55515cm</Height>
+          <Height>2.63452cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1087,10 +1157,10 @@ from VISTA_OFISMART_DI2D</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>2.36426cm</Top>
-              <Left>0.07937cm</Left>
+              <Top>2.4cm</Top>
+              <Left>0.09082cm</Left>
               <Height>0cm</Height>
-              <Width>28.0238cm</Width>
+              <Width>27.59401cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1397,14 +1467,14 @@ from VISTA_OFISMART_DI2D</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.98978cm</Height>
+          <Height>2.85749cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Line Name="Line2">
               <Top>0.30868cm</Top>
               <Height>0cm</Height>
-              <Width>28.0238cm</Width>
+              <Width>27.68483cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -1431,7 +1501,7 @@ from VISTA_OFISMART_DI2D</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.48507cm</Top>
-              <Left>19.53506cm</Left>
+              <Left>19.17734cm</Left>
               <Height>0.49417cm</Height>
               <Width>8.27769cm</Width>
               <ZIndex>1</ZIndex>
@@ -1464,8 +1534,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>1.08507cm</Top>
-              <Left>21.18525cm</Left>
+              <Top>1.12035cm</Top>
+              <Left>20.82752cm</Left>
               <Height>0.49417cm</Height>
               <Width>6.6275cm</Width>
               <ZIndex>2</ZIndex>

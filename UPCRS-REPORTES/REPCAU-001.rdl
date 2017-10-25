@@ -339,7 +339,6 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -693,7 +692,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>1.41167cm</Top>
+              <Top>1.37639cm</Top>
               <Left>0.19558cm</Left>
               <Height>0.49417cm</Height>
               <Width>5.35479cm</Width>
@@ -725,7 +724,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.24694cm</Top>
+              <Top>0.21167cm</Top>
               <Left>0.19558cm</Left>
               <Height>0.49417cm</Height>
               <Width>4.41722cm</Width>
@@ -757,7 +756,7 @@ FROM            VISTA_CARPETAS_PC VISTA_CARPETAS_PC_1
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.84695cm</Top>
+              <Top>0.77639cm</Top>
               <Left>0.19558cm</Left>
               <Height>0.49417cm</Height>
               <Width>4.41722cm</Width>

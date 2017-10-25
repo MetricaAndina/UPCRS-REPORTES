@@ -10,20 +10,166 @@
     </DataSource>
   </DataSources>
   <DataSets>
+    <DataSet Name="ReportesDataSet">
+      <Query>
+        <DataSourceName>ReportesDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="?">
+            <Value>=Parameters!MODULO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!CONTROL_OWNER.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_REPORTE_ANTERIOR.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!FECHA_REPORTE.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="?">
+            <Value>=Parameters!COMPARACION.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>CALL PROC_SOCRATES_DELTA(?,?,?,?,?,null,null);</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Autorizado">
+          <DataField>Autorizado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nombre_Autorizado">
+          <DataField>Nombre Autorizado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="permiso">
+          <DataField>permiso</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COD_APLICATIVO">
+          <DataField>COD_APLICATIVO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Aplicación">
+          <DataField>Aplicación</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descripción_de_la_aplicación">
+          <DataField>Descripción de la aplicación</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Funcion">
+          <DataField>Funcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescripcionFunc">
+          <DataField>DescripcionFunc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Bloqueos">
+          <DataField>Bloqueos</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descripción_del_bloqueo">
+          <DataField>Descripción del bloqueo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UCreacionUser">
+          <DataField>UCreacionUser</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FCreacionUser">
+          <DataField>FCreacionUser</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="UModificacionUser">
+          <DataField>UModificacionUser</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FModificacionUser">
+          <DataField>FModificacionUser</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="InicioVigenciaRolModulo">
+          <DataField>InicioVigenciaRolModulo</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FinVigenciaRolModulo">
+          <DataField>FinVigenciaRolModulo</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="UCreacionUserRol">
+          <DataField>UCreacionUserRol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FCreacionUserRol">
+          <DataField>FCreacionUserRol</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="UModificacionRolUserRol">
+          <DataField>UModificacionRolUserRol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FModificacionUserRol">
+          <DataField>FModificacionUserRol</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FechaAsignacion">
+          <DataField>FechaAsignacion</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Servidor">
+          <DataField>Servidor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cargo">
+          <DataField>Cargo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Area">
+          <DataField>Area</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Subarea">
+          <DataField>Subarea</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Usuario_Jefe">
+          <DataField>Usuario_Jefe</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreJefe">
+          <DataField>NombreJefe</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FechaRegistro">
+          <DataField>FechaRegistro</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Comparacion">
+          <DataField>Comparacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
     <DataSet Name="ControlOwnerDataSet">
       <Query>
         <DataSourceName>ReportesDataSource</DataSourceName>
-        <CommandText>SELECT        concat(ad_username, ' - ', Sig) ad_userSig, ad_username
-FROM            VISTA_PROPIETARIOS_DI2D
-WHERE        FechaRegistro = CURDATE();</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="?">
+            <Value>=Parameters!MODULO.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT DISTINCT ad_username, NombreCompleto(ad_username) AS NombreCompleto
+FROM            LISTA_PROPIETARIOS_APP
+WHERE        (lpr_tabla_app = 'APP_SOCRATES') AND (lpr_tabla_modulo = ?)</CommandText>
       </Query>
       <Fields>
-        <Field Name="ad_userSig">
-          <DataField>ad_userSig</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="ad_username">
           <DataField>ad_username</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -33,12 +179,12 @@ WHERE        FechaRegistro = CURDATE();</CommandText>
         <DataSourceName>ReportesDataSource</DataSourceName>
         <CommandText>SELECT        'Todos' AS des, 'Todos' AS valor
 FROM            VISTA_RiskCtl001OutLL V0
-UNION
+UNION 
 SELECT        'Nuevo' AS des, 'Nuevo' AS valor
 FROM            VISTA_RiskCtl001OutLL V1
 UNION
 SELECT        'Existente' AS des, 'Existente' AS valor
-FROM            VISTA_RiskCtl001OutLL V2
+FROM           VISTA_RiskCtl001OutLL V2
 UNION
 SELECT        'Eliminado' AS des, 'Eliminado' AS valor
 FROM            VISTA_RiskCtl001OutLL V3</CommandText>
@@ -54,13 +200,30 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="NombreCompletoControlOwnerDataSet">
+    <DataSet Name="GradoDataSet">
+      <Query>
+        <DataSourceName>ReportesDataSource</DataSourceName>
+        <CommandText>SELECT 'UPC' AS VALOR, 'UPC' AS DES FROM VISTA_PROPIETARIOS_DI2D
+UNION
+SELECT 'EPG' AS VALOR, 'EPG' AS DES FROM VISTA_PROPIETARIOS_DI2D</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="VALOR">
+          <DataField>VALOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DES">
+          <DataField>DES</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="NombreCompletoDataSet">
       <Query>
         <DataSourceName>ReportesDataSource</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="?">
             <Value>=Parameters!CONTROL_OWNER.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
         <CommandText>select NombreCompleto(?) as NombreCompleto
@@ -73,76 +236,16 @@ from VISTA_OFISMART_DI2D</CommandText>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="ReportesDataSet">
+    <DataSet Name="ModuloDataSet">
       <Query>
         <DataSourceName>ReportesDataSource</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="?">
-            <Value>=Parameters!CONTROL_OWNER.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO_ANTERIOR.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!FECHA_REGISTRO.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!COMPARACION.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>CALL PROC_OFISMART_DI2D_DELTA(?,?,?,?);</CommandText>
+        <CommandText>SELECT DISTINCT lpr_tabla_modulo
+FROM            LISTA_PROPIETARIOS_APP
+WHERE        lpr_tabla_app = 'APP_SOCRATES';</CommandText>
       </Query>
       <Fields>
-        <Field Name="Grupo_Usuario">
-          <DataField>Grupo_Usuario</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="GRUPO">
-          <DataField>GRUPO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Usuario">
-          <DataField>Usuario</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Nombre">
-          <DataField>Nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="COD_SISTEMA">
-          <DataField>COD_SISTEMA</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NOMBRE_SISTEMA">
-          <DataField>NOMBRE_SISTEMA</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Cargo">
-          <DataField>Cargo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Subarea">
-          <DataField>Subarea</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Usuario_Jefe">
-          <DataField>Usuario_Jefe</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NombreJefe">
-          <DataField>NombreJefe</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Permiso">
-          <DataField>Permiso</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FechaRegistro">
-          <DataField>FechaRegistro</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Comparacion">
-          <DataField>Comparacion</DataField>
+        <Field Name="lpr_tabla_modulo">
+          <DataField>lpr_tabla_modulo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -156,45 +259,48 @@ from VISTA_OFISMART_DI2D</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.96861cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.93705cm</Width>
+                  <Width>2.43809cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.45452cm</Width>
+                  <Width>1.534cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.3812cm</Width>
+                  <Width>1.70259cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.20394cm</Width>
+                  <Width>1.8693cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.96708cm</Width>
+                  <Width>1.86949cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.23542cm</Width>
+                  <Width>2.27786cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.11854cm</Width>
+                  <Width>2.33675cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.74085cm</Width>
+                  <Width>1.82557cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.91792cm</Width>
+                  <Width>2.57473cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.96961cm</Width>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.84396cm</Width>
+                  <Width>2.02879cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.31479cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.10271cm</Height>
+                  <Height>1.33241cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -205,7 +311,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>N°</Value>
+                                  <Value>AUTORIZADO</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -232,14 +338,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox115">
+                        <Textbox Name="Textbox4">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>USUARIO</Value>
+                                  <Value>NOMBRE AUTORIZADO</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -249,7 +355,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox115</rd:DefaultName>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -266,14 +372,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox117">
+                        <Textbox Name="Textbox34">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>NOMBRE USUARIO</Value>
+                                  <Value>ÁREA</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -283,7 +389,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox117</rd:DefaultName>
+                          <rd:DefaultName>Textbox34</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -300,14 +406,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox119">
+                        <Textbox Name="Textbox36">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CARGO</Value>
+                                  <Value>SUB ÁREA</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -317,7 +423,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox119</rd:DefaultName>
+                          <rd:DefaultName>Textbox36</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -334,14 +440,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox121">
+                        <Textbox Name="Textbox38">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>GERENCIA</Value>
+                                  <Value>PUESTO DE TRABAJO</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -351,7 +457,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox121</rd:DefaultName>
+                          <rd:DefaultName>Textbox38</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -368,14 +474,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox123">
+                        <Textbox Name="Textbox42">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>USUARIO JEFE</Value>
+                                  <Value>JEFE</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -385,41 +491,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox123</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>#e09c6d</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox125">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>NOMBRE JEFE</Value>
-                                  <Style>
-                                    <FontSize>9pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox125</rd:DefaultName>
+                          <rd:DefaultName>Textbox42</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -443,7 +515,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>GRUPO USUARIO</Value>
+                                  <Value>APLICACIÓN</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -470,14 +542,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox127">
+                        <Textbox Name="Textbox9">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>NOMBRE GRUPO</Value>
+                                  <Value>DESCRIPCIÓN DE APLICACIÓN</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -487,7 +559,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox127</rd:DefaultName>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -504,14 +576,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox131">
+                        <Textbox Name="Textbox14">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>COD. SISTEMA</Value>
+                                  <Value>FUNCIÓN</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -521,7 +593,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox131</rd:DefaultName>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -538,14 +610,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox133">
+                        <Textbox Name="Textbox17">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>NOMBRE SISTEMA</Value>
+                                  <Value>DESCRIPCIÓN FUNCIÓN</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -555,7 +627,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox133</rd:DefaultName>
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -572,14 +644,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox135">
+                        <Textbox Name="Textbox44">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>COMPARACIÓN</Value>
+                                  <Value>FECHA ASIGNACIÓN  DE FUNCIÓN</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -589,7 +661,75 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox135</rd:DefaultName>
+                          <rd:DefaultName>Textbox44</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox24">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>BLOQUEOS</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox24</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#e09c6d</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>DESCRIPCION BLOQUEO</Value>
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -611,14 +751,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox4">
+                        <Textbox Name="Autorizado">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=RowNumber(Nothing)</Value>
+                                  <Value>=Fields!Autorizado.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -627,7 +767,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <rd:DefaultName>Autorizado</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -643,14 +783,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Usuario">
+                        <Textbox Name="Nombre_Autorizado">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Usuario.Value</Value>
+                                  <Value>=Fields!Nombre_Autorizado.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -659,7 +799,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Usuario</rd:DefaultName>
+                          <rd:DefaultName>Nombre_Autorizado</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -675,14 +815,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Nombre">
+                        <Textbox Name="Area">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Nombre.Value</Value>
+                                  <Value>=Fields!Area.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -691,39 +831,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Nombre</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Cargo">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Cargo.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Cargo</rd:DefaultName>
+                          <rd:DefaultName>Area</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -771,14 +879,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Usuario_Jefe">
+                        <Textbox Name="Cargo">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Usuario_Jefe.Value</Value>
+                                  <Value>=Fields!Cargo.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -787,7 +895,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Usuario_Jefe</rd:DefaultName>
+                          <rd:DefaultName>Cargo</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -835,14 +943,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Grupo_Usuario1">
+                        <Textbox Name="Aplicación">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Grupo_Usuario.Value</Value>
+                                  <Value>=Fields!Aplicación.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -851,7 +959,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Grupo_Usuario1</rd:DefaultName>
+                          <rd:DefaultName>Aplicación</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -867,14 +975,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="GRUPO">
+                        <Textbox Name="Descripción_de_la_aplicación">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GRUPO.Value</Value>
+                                  <Value>=Fields!Descripción_de_la_aplicación.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -883,7 +991,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>GRUPO</rd:DefaultName>
+                          <rd:DefaultName>Descripción_de_la_aplicación</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -899,14 +1007,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="COD_SISTEMA">
+                        <Textbox Name="Funcion">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!COD_SISTEMA.Value</Value>
+                                  <Value>=Fields!Funcion.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -915,7 +1023,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>COD_SISTEMA</rd:DefaultName>
+                          <rd:DefaultName>Funcion</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -931,14 +1039,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="NOMBRE_SISTEMA">
+                        <Textbox Name="DescripcionFunc">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!NOMBRE_SISTEMA.Value</Value>
+                                  <Value>=Fields!DescripcionFunc.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -947,7 +1055,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>NOMBRE_SISTEMA</rd:DefaultName>
+                          <rd:DefaultName>DescripcionFunc</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -963,14 +1071,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Comparacion">
+                        <Textbox Name="Textbox45">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Comparacion.Value</Value>
+                                  <Value />
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -979,7 +1087,71 @@ from VISTA_OFISMART_DI2D</CommandText>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Comparacion</rd:DefaultName>
+                          <rd:DefaultName>Textbox45</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Bloqueos">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Bloqueos.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Bloqueos</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Descripción_del_bloqueo">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Descripción_del_bloqueo.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Descripción_del_bloqueo</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1011,24 +1183,24 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
                   <KeepWithGroup>After</KeepWithGroup>
-                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalles" />
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <RepeatRowHeaders>true</RepeatRowHeaders>
             <DataSetName>ReportesDataSet</DataSetName>
-            <Top>0.45792cm</Top>
-            <Height>1.70271cm</Height>
-            <Width>24.7387cm</Width>
+            <Top>0.43147cm</Top>
+            <Left>0.01273cm</Left>
+            <Height>1.93241cm</Height>
+            <Width>27.77197cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1036,13 +1208,13 @@ from VISTA_OFISMART_DI2D</CommandText>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.08686in</Height>
+        <Height>1.02441in</Height>
         <Style />
       </Body>
-      <Width>9.94922in</Width>
+      <Width>10.93886in</Width>
       <Page>
         <PageHeader>
-          <Height>2.73813cm</Height>
+          <Height>2.89911cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1053,7 +1225,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>REVISION DE PERMISOS Y AUTORIZACIONES DE OFISMART</Value>
+                      <Value>REVISIÓN DE PERMISOS Y AUTORIZACIONES DE SÓCRATES</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1066,10 +1238,10 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.13528cm</Top>
-              <Left>1.67639cm</Left>
-              <Height>0.73813cm</Height>
-              <Width>16.46026cm</Width>
+              <Top>0.33496cm</Top>
+              <Left>1.92843cm</Left>
+              <Height>0.69674cm</Height>
+              <Width>16.38089cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1081,9 +1253,10 @@ from VISTA_OFISMART_DI2D</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>2.4559cm</Top>
+              <Top>2.64648cm</Top>
+              <Left>0.03921cm</Left>
               <Height>0cm</Height>
-              <Width>25.27103cm</Width>
+              <Width>25.61545cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1095,8 +1268,8 @@ from VISTA_OFISMART_DI2D</CommandText>
               <Source>Embedded</Source>
               <Value>logoupc60x60</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.13528cm</Top>
-              <Left>0.07056cm</Left>
+              <Top>0.31433cm</Top>
+              <Left>0.2cm</Left>
               <Height>1.5cm</Height>
               <Width>1.5cm</Width>
               <ZIndex>2</ZIndex>
@@ -1106,7 +1279,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Border>
               </Style>
             </Image>
-            <Textbox Name="Textbox3">
+            <Textbox Name="Textbox7">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1125,8 +1298,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.94396cm</Top>
-              <Left>1.60583cm</Left>
+              <Top>1.12288cm</Top>
+              <Left>8.86535cm</Left>
               <Height>0.5cm</Height>
               <Width>3.46922cm</Width>
               <ZIndex>3</ZIndex>
@@ -1141,14 +1314,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox5">
+            <Textbox Name="Textbox11">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!NombreCompleto.Value, "NombreCompletoControlOwnerDataSet")</Value>
+                      <Value>=First(Parameters!CONTROL_OWNER.Label, "NombreCompletoDataSet")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -1160,8 +1333,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.94396cm</Top>
-              <Left>5.11033cm</Left>
+              <Top>1.12288cm</Top>
+              <Left>12.36985cm</Left>
               <Height>0.5cm</Height>
               <Width>7.80369cm</Width>
               <ZIndex>4</ZIndex>
@@ -1175,7 +1348,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox9">
+            <Textbox Name="Textbox13">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1194,8 +1367,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.52375cm</Top>
-              <Left>1.60583cm</Left>
+              <Top>1.79926cm</Top>
+              <Left>1.91752cm</Left>
               <Height>0.5cm</Height>
               <Width>4.73922cm</Width>
               <ZIndex>5</ZIndex>
@@ -1210,14 +1383,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox13">
+            <Textbox Name="Textbox16">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Parameters!FECHA_REGISTRO_ANTERIOR.Value,"dd/MM/yyyy")</Value>
+                      <Value>=Format(Parameters!FECHA_REPORTE_ANTERIOR.Value, "dd/MM/yyyy")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -1229,8 +1402,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.52375cm</Top>
-              <Left>6.41561cm</Left>
+              <Top>1.79926cm</Top>
+              <Left>6.7273cm</Left>
               <Height>0.5cm</Height>
               <Width>2.0675cm</Width>
               <ZIndex>6</ZIndex>
@@ -1244,7 +1417,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox17">
+            <Textbox Name="Textbox20">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1263,8 +1436,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.52375cm</Top>
-              <Left>8.55366cm</Left>
+              <Top>1.79926cm</Top>
+              <Left>8.86535cm</Left>
               <Height>0.5cm</Height>
               <Width>3.74729cm</Width>
               <ZIndex>7</ZIndex>
@@ -1279,14 +1452,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox20">
+            <Textbox Name="Textbox21">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Format(Parameters!FECHA_REGISTRO.Value,"dd/MM/yyyy")</Value>
+                      <Value>=Format(Parameters!FECHA_REPORTE.Value, "dd/MM/yyyy")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -1298,8 +1471,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.52375cm</Top>
-              <Left>12.37151cm</Left>
+              <Top>1.79926cm</Top>
+              <Left>12.6832cm</Left>
               <Height>0.5cm</Height>
               <Width>1.77631cm</Width>
               <ZIndex>8</ZIndex>
@@ -1313,7 +1486,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox21">
+            <Textbox Name="Textbox23">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1332,8 +1505,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.52375cm</Top>
-              <Left>14.21838cm</Left>
+              <Top>1.79926cm</Top>
+              <Left>14.53007cm</Left>
               <Height>0.5cm</Height>
               <Width>2.67226cm</Width>
               <ZIndex>9</ZIndex>
@@ -1348,7 +1521,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox22">
+            <Textbox Name="Textbox26">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1367,8 +1540,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.52375cm</Top>
-              <Left>16.92591cm</Left>
+              <Top>1.79926cm</Top>
+              <Left>17.2376cm</Left>
               <Height>0.5cm</Height>
               <Width>2.99922cm</Width>
               <ZIndex>10</ZIndex>
@@ -1376,6 +1549,76 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox12">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>MÓDULO :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.1435cm</Top>
+              <Left>1.91752cm</Left>
+              <Height>0.5cm</Height>
+              <Width>1.80981cm</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox28">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!MODULO.Value</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.17281cm</Top>
+              <Left>3.86844cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.61638cm</Width>
+              <ZIndex>12</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -1390,10 +1633,20 @@ from VISTA_OFISMART_DI2D</CommandText>
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.83104cm</Height>
+          <Height>3.12207cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
+            <Line Name="Line2">
+              <Top>0.30868cm</Top>
+              <Height>0cm</Height>
+              <Width>25.65466cm</Width>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
             <Textbox Name="Textbox19">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1413,10 +1666,11 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.44978cm</Top>
-              <Left>16.46101cm</Left>
+              <Top>0.48507cm</Top>
+              <Left>17.00701cm</Left>
               <Height>0.49417cm</Height>
               <Width>8.27769cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1427,17 +1681,6 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line2">
-              <Top>0.30866cm</Top>
-              <Height>0cm</Height>
-              <Width>25.27103cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
             <Textbox Name="Textbox18">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1457,8 +1700,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>1.04978cm</Top>
-              <Left>18.1112cm</Left>
+              <Top>1.08507cm</Top>
+              <Left>18.6572cm</Left>
               <Height>0.49417cm</Height>
               <Width>6.6275cm</Width>
               <ZIndex>2</ZIndex>
@@ -1472,14 +1715,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox23">
+            <Textbox Name="Textbox29">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="NUEVOS : " &amp; Sum(IIF(Fields!Comparacion.Value = "Nuevo", 1, 0),"ReportesDataSet")</Value>
+                      <Value>="NUEVOS : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Nuevo", 1, 0), "ReportesDataSet"))</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -1489,8 +1732,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.44978cm</Top>
-              <Left>0.07056cm</Left>
+              <Top>0.44979cm</Top>
+              <Left>0.04582cm</Left>
               <Height>0.49417cm</Height>
               <Width>4.41722cm</Width>
               <ZIndex>3</ZIndex>
@@ -1504,14 +1747,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox25">
+            <Textbox Name="Textbox30">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="EXISTENTE : " &amp; Sum(IIF(Fields!Comparacion.Value = "Existente", 1, 0),"ReportesDataSet")</Value>
+                      <Value>="EXISTENTE : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Existente", 1, 0), "ReportesDataSet"))</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -1521,8 +1764,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>1.04978cm</Top>
-              <Left>0.03747cm</Left>
+              <Top>1.04979cm</Top>
+              <Left>0.01273cm</Left>
               <Height>0.49417cm</Height>
               <Width>4.4503cm</Width>
               <ZIndex>4</ZIndex>
@@ -1536,14 +1779,14 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox26">
+            <Textbox Name="Textbox31">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="ELIMINADO : " &amp; Sum(IIF(Fields!Comparacion.Value = "Eliminado", 1, 0),"ReportesDataSet")</Value>
+                      <Value>="ELIMINADO : " &amp; IIF(CountRows("ReportesDataSet")=0,0,Sum(IIF(Fields!Comparacion.Value = "Eliminado", 1, 0), "ReportesDataSet"))</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -1553,8 +1796,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>1.6145cm</Top>
-              <Left>0.07056cm</Left>
+              <Top>1.61451cm</Top>
+              <Left>0.04582cm</Left>
               <Height>0.49417cm</Height>
               <Width>4.41722cm</Width>
               <ZIndex>5</ZIndex>
@@ -1568,7 +1811,7 @@ from VISTA_OFISMART_DI2D</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox27">
+            <Textbox Name="Textbox32">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1585,8 +1828,8 @@ from VISTA_OFISMART_DI2D</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>2.21451cm</Top>
-              <Left>0.07056cm</Left>
+              <Top>2.21452cm</Top>
+              <Left>0.04582cm</Left>
               <Height>0.49417cm</Height>
               <Width>5.35479cm</Width>
               <ZIndex>6</ZIndex>
@@ -1609,16 +1852,27 @@ from VISTA_OFISMART_DI2D</CommandText>
         </PageFooter>
         <PageHeight>22.3cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
-        <LeftMargin>1.5cm</LeftMargin>
-        <RightMargin>1.5cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>0.3cm</LeftMargin>
+        <RightMargin>0.3cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
   </ReportSections>
   <ReportParameters>
+    <ReportParameter Name="MODULO">
+      <DataType>String</DataType>
+      <Prompt>MÓDULO</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ModuloDataSet</DataSetName>
+          <ValueField>lpr_tabla_modulo</ValueField>
+          <LabelField>lpr_tabla_modulo</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
     <ReportParameter Name="CONTROL_OWNER">
       <DataType>String</DataType>
       <DefaultValue>
@@ -1632,15 +1886,15 @@ from VISTA_OFISMART_DI2D</CommandText>
         <DataSetReference>
           <DataSetName>ControlOwnerDataSet</DataSetName>
           <ValueField>ad_username</ValueField>
-          <LabelField>ad_userSig</LabelField>
+          <LabelField>NombreCompleto</LabelField>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
-    <ReportParameter Name="FECHA_REGISTRO_ANTERIOR">
+    <ReportParameter Name="FECHA_REPORTE_ANTERIOR">
       <DataType>DateTime</DataType>
       <Prompt>FECHA CIERRE COMPARACIÓN</Prompt>
     </ReportParameter>
-    <ReportParameter Name="FECHA_REGISTRO">
+    <ReportParameter Name="FECHA_REPORTE">
       <DataType>DateTime</DataType>
       <Prompt>FECHA CIERRE REPORTE</Prompt>
     </ReportParameter>
@@ -1652,7 +1906,7 @@ from VISTA_OFISMART_DI2D</CommandText>
           <ValueField>valor</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>COMPARACION</Prompt>
+      <Prompt>COMPARACIÓN</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>ComparacionDataSet</DataSetName>
@@ -1661,31 +1915,54 @@ from VISTA_OFISMART_DI2D</CommandText>
         </DataSetReference>
       </ValidValues>
     </ReportParameter>
+    <ReportParameter Name="FECHA_DESDE">
+      <DataType>DateTime</DataType>
+      <Prompt>FILTRAR DESDE</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FECHA_HASTA">
+      <DataType>DateTime</DataType>
+      <Prompt>FILTRAR HASTA</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>3</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>CONTROL_OWNER</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>FECHA_REGISTRO_ANTERIOR</ParameterName>
+          <ParameterName>CONTROL_OWNER</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>FECHA_REGISTRO</ParameterName>
+          <ParameterName>FECHA_REPORTE_ANTERIOR</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>1</RowIndex>
+          <ParameterName>FECHA_REPORTE</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>MODULO</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>COMPARACION</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>FECHA_DESDE</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>FECHA_HASTA</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

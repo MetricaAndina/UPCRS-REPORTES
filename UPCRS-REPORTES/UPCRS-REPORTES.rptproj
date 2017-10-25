@@ -101,6 +101,10 @@
       <Name>REPCAU-023.rdl</Name>
       <FullPath>REPCAU-023.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>REPCAU-025.rdl</Name>
+      <FullPath>REPCAU-025.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

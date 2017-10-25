@@ -803,7 +803,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Today(), "dd/MM/yyyy")</Value>
+                      <Value>= "FECHA DE EMISIÓN DEL REPORTE : " &amp; Format(Parameters!FECHA_ACTUAL_REGISTRO.Value, "dd/MM/yyyy")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>

@@ -982,11 +982,11 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
   <ReportParameters>
     <ReportParameter Name="Fec_Anterior">
       <DataType>DateTime</DataType>
-      <Prompt>CONTROL ANTERIOR</Prompt>
+      <Prompt>FECHA CIERRE COMPARACIÓN</Prompt>
     </ReportParameter>
     <ReportParameter Name="Fec_Actual">
       <DataType>DateTime</DataType>
-      <Prompt>CONTROL ACTUAL</Prompt>
+      <Prompt>FECHA CIERRE REPORTE</Prompt>
     </ReportParameter>
     <ReportParameter Name="Estado">
       <DataType>String</DataType>
@@ -1012,17 +1012,17 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>Fec_Anterior</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>Fec_Actual</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
+          <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>Estado</ParameterName>
         </CellDefinition>

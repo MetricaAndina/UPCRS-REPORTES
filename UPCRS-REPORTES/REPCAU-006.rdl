@@ -1147,11 +1147,11 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
   <ReportParameters>
     <ReportParameter Name="FECHA_ANTERIOR_REGISTRO">
       <DataType>DateTime</DataType>
-      <Prompt>CONTROL ANTERIOR</Prompt>
+      <Prompt>FECHA CIERRE COMPARACIÓN</Prompt>
     </ReportParameter>
     <ReportParameter Name="FECHA_REGISTRO">
       <DataType>DateTime</DataType>
-      <Prompt>CONTROL ACTUAL</Prompt>
+      <Prompt>FECHA CIERRE REPORTE</Prompt>
     </ReportParameter>
     <ReportParameter Name="COMPARACIÓN">
       <DataType>String</DataType>
@@ -1177,17 +1177,17 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>FECHA_ANTERIOR_REGISTRO</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>FECHA_REGISTRO</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
+          <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>COMPARACIÓN</ParameterName>
         </CellDefinition>

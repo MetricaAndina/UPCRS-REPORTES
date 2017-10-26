@@ -1200,7 +1200,7 @@ WHERE        lpr_tabla_app = 'APP_SOCRATES';</CommandText>
             <Top>0.43147cm</Top>
             <Left>0.01273cm</Left>
             <Height>1.93241cm</Height>
-            <Width>27.77197cm</Width>
+            <Width>27.77196cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1256,7 +1256,7 @@ WHERE        lpr_tabla_app = 'APP_SOCRATES';</CommandText>
               <Top>2.64648cm</Top>
               <Left>0.03921cm</Left>
               <Height>0cm</Height>
-              <Width>25.61545cm</Width>
+              <Width>27.74548cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1640,7 +1640,7 @@ WHERE        lpr_tabla_app = 'APP_SOCRATES';</CommandText>
             <Line Name="Line2">
               <Top>0.30868cm</Top>
               <Height>0cm</Height>
-              <Width>25.65466cm</Width>
+              <Width>27.78469cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -1667,7 +1667,7 @@ WHERE        lpr_tabla_app = 'APP_SOCRATES';</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>0.48507cm</Top>
-              <Left>17.00701cm</Left>
+              <Left>19.22951cm</Left>
               <Height>0.49417cm</Height>
               <Width>8.27769cm</Width>
               <ZIndex>1</ZIndex>
@@ -1701,7 +1701,7 @@ WHERE        lpr_tabla_app = 'APP_SOCRATES';</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
               <Top>1.08507cm</Top>
-              <Left>18.6572cm</Left>
+              <Left>20.8797cm</Left>
               <Height>0.49417cm</Height>
               <Width>6.6275cm</Width>
               <ZIndex>2</ZIndex>

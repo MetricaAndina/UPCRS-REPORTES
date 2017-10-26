@@ -981,11 +981,11 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
   <ReportParameters>
     <ReportParameter Name="FECHA_ANTERIOR">
       <DataType>DateTime</DataType>
-      <Prompt>CONTROL ANTERIOR</Prompt>
+      <Prompt>FECHA CIERRE COMPARACIÓN</Prompt>
     </ReportParameter>
     <ReportParameter Name="FECHA_ACTUAL_REGISTRO">
       <DataType>DateTime</DataType>
-      <Prompt>CONTROL ACTUAL</Prompt>
+      <Prompt>FECHA CIERRE REPORTE</Prompt>
     </ReportParameter>
     <ReportParameter Name="ESTADO">
       <DataType>String</DataType>

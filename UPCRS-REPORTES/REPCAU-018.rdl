@@ -639,7 +639,7 @@ WHERE        (FechaRegistro = ?)</CommandText>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>FECHA_REGISTRO</ParameterName>
         </CellDefinition>

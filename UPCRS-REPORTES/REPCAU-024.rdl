@@ -180,6 +180,24 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="DS_NOMBRECOMPLETO">
+      <Query>
+        <DataSourceName>ReportesDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="?">
+            <Value>=Parameters!OWNER.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select NombreCompleto(?) as NombreCompleto
+from VISTA_OFISMART_DI2D</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -1846,7 +1864,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
       <Width>22.70941in</Width>
       <Page>
         <PageHeader>
-          <Height>2.13182cm</Height>
+          <Height>2.89911cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1873,7 +1891,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               <Top>0.31433cm</Top>
               <Left>2.145cm</Left>
               <Height>0.93486cm</Height>
-              <Width>20.61422cm</Width>
+              <Width>22.37338cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1885,7 +1903,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>1.99072cm</Top>
+              <Top>2.82856cm</Top>
               <Left>0.02646cm</Left>
               <Height>0cm</Height>
               <Width>24.99424cm</Width>
@@ -1911,6 +1929,207 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox12">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>MÓDULO :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.35502cm</Top>
+              <Left>2.145cm</Left>
+              <Height>0.5cm</Height>
+              <Width>1.80981cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox7">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>DUEÑO DEL PROCESO :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>1.31975cm</Top>
+              <Left>10.1819cm</Left>
+              <Height>0.5cm</Height>
+              <Width>3.46922cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox24">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>COMPARACIÓN :</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>2.15217cm</Top>
+              <Left>2.145cm</Left>
+              <Height>0.5cm</Height>
+              <Width>2.67226cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox6">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!Modulo.Value</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox6</rd:DefaultName>
+              <Top>1.35502cm</Top>
+              <Left>5.1819cm</Left>
+              <Height>0.45931cm</Height>
+              <Width>4.59021cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox8">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=UCase(First(Parameters!OWNER.Value, "DS_NOMBRECOMPLETO"))</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox6</rd:DefaultName>
+              <Top>1.39571cm</Top>
+              <Left>14.34855cm</Left>
+              <Height>0.45931cm</Height>
+              <Width>4.59021cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox9">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!COMPARACION.Value</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox6</rd:DefaultName>
+              <Top>2.15217cm</Top>
+              <Left>5.1819cm</Left>
+              <Height>0.45931cm</Height>
+              <Width>4.59021cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -2053,7 +2272,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
           <ValueField>lpr_tabla_modulo</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Modulo</Prompt>
+      <Prompt>MODULO</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>DS_Modulo</DataSetName>
@@ -2064,7 +2283,7 @@ FROM            VISTA_RiskCtl001OutLL V3</CommandText>
     </ReportParameter>
     <ReportParameter Name="OWNER">
       <DataType>String</DataType>
-      <Prompt>OWNER</Prompt>
+      <Prompt>DUEÑO DEL PROCESO</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>DS_Owner</DataSetName>
